@@ -31,5 +31,5 @@ class resource(osv.Model):
     _columns = {
             'name':fields.char('Film', size=64, required=False, readonly=False),
             'year':fields.date('Year', required=True, autodate=True),
-            'image': fields.blob("Image")
+            'image': fields.binary("Image")
         }
