@@ -31,6 +31,7 @@ class chapter(osv.Model):
     _columns = {
             'title':fields.char('Title', size=64, required=True),
             'description': fields.text('Description'), 
-            'source': fields.binary("Source", filters='*.mp4, *.avi'),
-            'season_id':fields.many2one('season', 'Seasons')
+            'emision_date': fields.date("Emision Date", required=True, autodate=True),
+            'source': fields.binary("Source"),
+            #'season_id':fields.many2one('season', 'Seasons')
         }

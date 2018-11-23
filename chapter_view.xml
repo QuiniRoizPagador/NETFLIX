@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_chapter_form_view">
+			<field name="name">view_chapter_form</field>
+			<field name="model">chapter</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Chapters">
+					<group colspan="2">
+						<field name="title" />
+						<field name="description" />
+						<field name="emision_date" />
+					</group>
+					<field name="source" nolabel="1" widget="image" />
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_chapter_tree_view">
+			<field name="name">view_chapter_tree</field>
+			<field name="model">chapter</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="title" />
+					<field name="description" />
+					<field name="emision_date" />
+					<field name="source" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_chapter_kanban">
+			<field name="name">view_chapter_kanban</field>
+			<field name="model">chapter</field>
+			<field name="typ">kanban</field>
+			<field name="arch" type="xml">
+				<kanban create="false">
+					<field name="title" />
+					<field name="source" />
+					<field name="emision_date" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_module_vignette">
+								<img t-att-src="kanban_image('chapter', 'source', record.id.value)"
+									class="oe_module_icon" />
+								<div class="oe_module_desc">
+									<h4>
+										<a type="open">
+											<field name="title" />
+										</a>
+									</h4>
+									<p class="oe_module_name">
+										<i>Emision Date: <field name="emision_date" /></i>
+									</p>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="act_chapters">
+			<field name="name">Chapters</field>
+			<field name="res_model">chapter</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">kanban,tree,form</field>
+		</record>
+		<menuitem id="upoflix" name="UPOFLIX" action="act_chapters" />
+		<menuitem name="Chapters" id="chapter_submenu" parent="upoflix"
+			sequence="100" />
+		<menuitem name="Show Chapters" id="show_chapters_submenu"
+			parent="chapter_submenu" sequence="110" action="act_chapters" />
+	</data>
+</openerp>
