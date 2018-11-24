@@ -22,7 +22,7 @@
 {
     "name": "UPOFLIX",
     "version": "1.0",
-    "depends": ["base", "resource"],
+    "depends": ["base"],
     "author": "Joaquin Roiz Pagador\nAndres Rueda Marin\nJose Ramon Terrero Lopez",
     "category": "Multimedia",
     "description": """
@@ -30,7 +30,7 @@
     y series al espectador.
     """,
     "init_xml": [],
-    'update_xml': ['main_view.xml'],
+    'update_xml': ['main_view.xml', 'serie_view.xml'],
     'demo_xml': [],
     'installable': True,
     'active': False,

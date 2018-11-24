@@ -23,13 +23,9 @@
 from osv import osv
 from osv import fields
 
-class resource(osv.osv):
-
-    _name = 'resource'
-    _description = 'This is a resource, can be a Film or a serie'
- 
+class serie(osv.osv):
+    _name = 'serie'
+    _inherit = 'resource'
     _columns = {
-            'name':fields.char('Name', size=64, required=True, readonly=False),
-            'year':fields.date('Year', required=True),
-            'image': fields.binary("Image")
-        }
+                'finalization_date':fields.date('Finalization Date')
+    }
