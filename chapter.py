@@ -29,9 +29,10 @@ class chapter(osv.Model):
     _description = 'This is a chapter form a season in a serie'
  
     _columns = {
-            'title':fields.char('Title', size=64, required=True),
-            'description': fields.text('Description'), 
+            'name':fields.char('Title', size=64, required=True),
+            'description': fields.text('Description'),
             'emision_date': fields.date("Emision Date", required=True, autodate=True),
-            'source': fields.binary("Source"),
-            #'season_id':fields.many2one('season', 'Seasons')
+            'image': fields.binary("Image"),
+            'source': fields.char("Source", required=False),
+            # 'season_id':fields.many2one('season', 'Seasons')
         }

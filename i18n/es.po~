@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20151115\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-24 18:56+0000\n"
-"PO-Revision-Date: 2018-11-24 18:56+0000\n"
+"POT-Creation-Date: 2018-11-25 14:19+0000\n"
+"PO-Revision-Date: 2018-11-25 14:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,9 +31,9 @@ msgid "This is a film, type of resource"
 msgstr "Esto es una película, un tipo de recurso"
 
 #. module: UPOFLIX
-#: field:chapter,title:0
+#: field:chapter,name:0
 msgid "Title"
-msgstr "Titulo"
+msgstr "Título"
 
 #. module: UPOFLIX
 #: view:chapter:0
@@ -43,7 +43,7 @@ msgstr "capítulos"
 #. module: UPOFLIX
 #: field:chapter,source:0
 msgid "Source"
-msgstr "Source"
+msgstr "Referencia"
 
 #. module: UPOFLIX
 #: model:ir.model,name:UPOFLIX.model_chapter
