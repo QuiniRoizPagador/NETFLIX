@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-		<record id="act_serie" model="ir.actions.act_window">
-			<field name="name">Series</field>
-			<field name="res_model">serie</field>
-			<field name="view_type">form</field>
-			<field name="view_id" ref="view_serie_tree"/>
-		</record>
+    	<record id="view_serie_calendar" model="ir.ui.view">
+    		<field name="name">serie.calendar</field>
+    		<field name="model">serie</field>
+    		<field name="arch" type="xml">
+    			<calendar string="Series" mode="month" color="name" date_start="year" date_stop="finalization_date">
+    				<field name="name"/>
+    			</calendar>
+    		</field>
+    	</record>
 		<record id="view_serie_tree" model="ir.ui.view">
             <field name="name">serie.tree</field>
             <field name="model">serie</field>
@@ -40,6 +43,13 @@
         		</form>
         	</field>
         </record>
+        <record id="act_serie" model="ir.actions.act_window">
+			<field name="name">Series</field>
+			<field name="res_model">serie</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,calendar</field>
+			<field name="view_id" ref="view_serie_tree"/>
+		</record>
     	<menuitem id="submenu_serie" name="Serie" parent="submenu_management" action="act_serie"/>
     </data>
 </openerp>
