@@ -31,7 +31,7 @@ class chapter(osv.Model):
     _columns = {
             'name':fields.char('Title', size=64, required=True),
             'description': fields.text('Description'),
-            'emision_date': fields.date("Emision Date", required=True, autodate=True),
+            'emission_date': fields.date("Emision Date", required=True, autodate=True),
             'image': fields.binary("Image"),
             'source': fields.char("Source", required=False),
             'season_id':fields.many2one('season','Season')
