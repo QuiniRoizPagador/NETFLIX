@@ -27,7 +27,7 @@
         	<field name="arch" type="xml">
         		<form string="Series" version="7.0">
         			<sheet>
-        				<field name="image" widget='image' class="oe_left oe_avatar"/>     				
+        				<field name="image" widget='image' class="oe_left upoflix-picture"/>     				
         				<div class="oe_title oe_right">
                             <h1><field name="name"/></h1>
                         </div>
@@ -37,6 +37,9 @@
 	                    	</group>
 	                        <group>
 	                        	<field name="finalization_date"/>
+	                        </group>
+	                        <group colspan="4">
+	                        	<field name="seasons"/>
 	                        </group>
                         </group>
         			</sheet>

@@ -21,8 +21,5 @@
 ##############################################################################
 
 import resource
-<<<<<<< HEAD
 import serie
-=======
 import season
->>>>>>> origin/joserra

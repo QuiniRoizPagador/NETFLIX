@@ -10,6 +10,7 @@
 			<field name="arch" type="xml">
 				<form string="Seasons">
 					<!-- <field name="serie_id" /> -->
+					<field name="season_number" colspan="4"/>
 					<field name="start_date" />
 					<field name="end_date" />
 					<!-- 
@@ -30,6 +31,7 @@
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="Seasons">
+					<field name="season_number" />
 					<field name="start_date" />
 					<field name="end_date" />
 					<!-- <field name="serie_id" /> -->
@@ -60,6 +62,6 @@
 		</record>
 		
 		<!-- Define MenuItem -->
-		<menuitem id="submenu_season" name="Season" parent="categories" action="act_season" />
+		<menuitem id="submenu_season" name="Season" parent="submenu_management" action="act_season" />
 	</data>	
 </openerp>

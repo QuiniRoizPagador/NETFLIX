@@ -27,5 +27,6 @@ class serie(osv.osv):
     _name = 'serie'
     _inherit = 'resource'
     _columns = {
-                'finalization_date':fields.date('Finalization Date')
+                'finalization_date':fields.date('Finalization Date'),
+                'seasons': fields.one2many('season', 'serie_id', 'Seasons'),
     }

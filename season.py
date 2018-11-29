@@ -29,8 +29,9 @@ class season(osv.osv):
     _description = 'this is a season from a serie.'
  
     _columns = {
+            'season_number':fields.integer("Season", required=True),
             'start_date':fields.date('Start Date'),
             'end_date':fields.date('End Date'),
-            #'serie_id':fields.many2one('serie','Serie'),
+            'serie_id':fields.many2one('serie','Serie'),
             #'chapter_ids':fields.one2many('chapter','Chapters'),
         }

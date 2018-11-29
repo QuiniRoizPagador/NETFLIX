@@ -30,7 +30,8 @@
     y series al espectador.
     """,
     "init_xml": [],
-    'update_xml': ['main_view.xml', 'serie_view.xml'],
+    'data': ['main_view.xml', 'serie_view.xml', 'season_view.xml'],
+    'css':['static/src/css/upoflix.css'],
     'demo_xml': [],
     'installable': True,
     'active': False,
