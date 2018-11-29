@@ -2,5 +2,6 @@
 <openerp>
 	<data>
 		<menuitem id="upoflix" name="UPOFLIX" />
+		<menuitem id="categories" name="Categories" parent="upoflix" />
 	</data>
 </openerp>

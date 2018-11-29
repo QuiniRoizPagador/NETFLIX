@@ -38,15 +38,28 @@
 			</field>
 		</record>
 		
+		<!-- Define Calendar View -->
+		<record id="view_season_calendar" model="ir.ui.view">
+			<field name="name">view_season_calendar</field>
+			<field name="model">season</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<!-- <calendar string="Seasons" color="serie_id" mode="month" date_start="start_date" date_stop="end_date"> -->
+				<calendar string="Seasons" color="start_date" mode="month" date_start="start_date" date_stop="end_date">
+					<field name="start_date"/>
+				</calendar>
+			</field>
+		</record>
+		
 		<!-- Define Action -->
-		<record id="act_season" model="ir.actions._act_window">
+		<record id="act_season" model="ir.actions.act_window">
 			<field name="name">Season</field>
 			<field name="res_model">season</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form,calendar</field>
 		</record>
 		
 		<!-- Define MenuItem -->
-		<menuitem id="submenu_season" name="Season" parent="upoflix" action="act_season" />
+		<menuitem id="submenu_season" name="Season" parent="categories" action="act_season" />
 	</data>	
 </openerp>
