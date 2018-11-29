@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- Define Form View -->
+		<record id="view_season_form" model="ir.ui.view">
+			<field name="name">view_season_form</field>
+			<field name="model">season</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Seasons">
+					<!-- <field name="serie_id" /> -->
+					<field name="start_date" />
+					<field name="end_date" />
+					<!-- 
+					<notebook colspan="5">
+						<page string="Chapters">
+							<field name="chapter_ids" />
+						</page>
+					</notebook>
+					 -->
+				</form>
+			</field>
+		</record>
+		
+		<!-- Define Tree View -->
+		<record id="view_season_tree" model="ir.ui.view">
+			<field name="name">view_season_tree</field>
+			<field name="model">season</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Seasons">
+					<field name="start_date" />
+					<field name="end_date" />
+					<!-- <field name="serie_id" /> -->
+					<!-- <field name="chapter_ids" /> -->
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Define Action -->
+		<record id="act_season" model="ir.actions._act_window">
+			<field name="name">Season</field>
+			<field name="res_model">season</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<!-- Define MenuItem -->
+		<menuitem id="submenu_season" name="Season" parent="upoflix" action="act_season" />
+	</data>	
+</openerp>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<menuitem id="upoflix" name="UPOFLIX" action="act_films" />
+		<menuitem id="upoflix" name="UPOFLIX" />
 	</data>
 </openerp>

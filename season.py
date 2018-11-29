@@ -19,20 +19,18 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
-{
-    "name": "UPOFLIX",
-    "version": "1.0",
-    "depends": ["base"],
-    "author": "Joaquin Roiz Pagador\nAndres Rueda Marin\nJose Ramon Terrero Lopez",
-    "category": "Multimedia",
-    "description": """
-    Aplicación que ofrecerá contenido multimedia para ver películas 
-    y series al espectador.
-    """,
-    "init_xml": [],
-    'update_xml': ['main_view.xml','season_view.xml'],
-    'demo_xml': [],
-    'installable': True,
-    'active': False,
-#    'certificate': 'certificate',
-}
+
+from osv import osv
+from osv import fields
+
+class season(osv.osv):
+
+    _name = 'season'
+    _description = 'this is a season from a serie.'
+ 
+    _columns = {
+            'start_date':fields.date('Start Date'),
+            'end_date':fields.date('End Date'),
+            #'serie_id':fields.many2one('serie','Serie'),
+            #'chapter_ids':fields.one2many('chapter','Chapters'),
+        }
