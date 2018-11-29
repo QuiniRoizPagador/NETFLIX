@@ -13,13 +13,11 @@
 					<field name="season_number" colspan="4"/>
 					<field name="start_date" />
 					<field name="end_date" />
-					<!-- 
 					<notebook colspan="5">
 						<page string="Chapters">
-							<field name="chapter_ids" />
+							<field name="chapters" />
 						</page>
 					</notebook>
-					 -->
 				</form>
 			</field>
 		</record>

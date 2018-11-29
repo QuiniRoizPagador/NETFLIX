@@ -33,5 +33,5 @@ class season(osv.osv):
             'start_date':fields.date('Start Date'),
             'end_date':fields.date('End Date'),
             'serie_id':fields.many2one('serie','Serie'),
-            #'chapter_ids':fields.one2many('chapter','Chapters'),
+            'chapters':fields.one2many('chapter', 'season_id', 'Chapters'),
         }
