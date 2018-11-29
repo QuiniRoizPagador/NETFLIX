@@ -34,5 +34,6 @@
     'demo_xml': [],
     'installable': True,
     'active': False,
+    'css':['static/src/css/upoflix.css'],
 #    'certificate': 'certificate',
 }
