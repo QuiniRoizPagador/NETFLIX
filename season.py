@@ -20,9 +20,17 @@
 #
 ##############################################################################
 
-import resource
-<<<<<<< HEAD
-import serie
-=======
-import season
->>>>>>> origin/joserra
+from osv import osv
+from osv import fields
+
+class season(osv.osv):
+
+    _name = 'season'
+    _description = 'this is a season from a serie.'
+ 
+    _columns = {
+            'start_date':fields.date('Start Date'),
+            'end_date':fields.date('End Date'),
+            #'serie_id':fields.many2one('serie','Serie'),
+            #'chapter_ids':fields.one2many('chapter','Chapters'),
+        }

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+<<<<<<< HEAD
 		<menuitem id="menu_upoflix" name="UPOFLIX"/>
 		<menuitem id="submenu_management" name="Management" parent="menu_upoflix"/>
+=======
+		<menuitem id="upoflix" name="UPOFLIX" />
+		<menuitem id="categories" name="Categories" parent="upoflix" />
+>>>>>>> origin/joserra
 	</data>
 </openerp>
