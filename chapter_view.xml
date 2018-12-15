@@ -21,7 +21,7 @@
 				<tree string="tree_string">
 					<field name="name" />
 					<field name="description" />
-					<field name="emision_date" />
+					<field name="emission_date" />
 					<field name="source" />
 				</tree>
 			</field>
@@ -43,7 +43,7 @@
 	                    		<field name="description"/>
 	                    	</group>
 	                        <group>
-	                        	<field name="emision_date"/>
+	                        	<field name="emission_date"/>
 	                        </group>
 	                        <group colspan="4">
 	                        	<field name="source" widget="url" />
@@ -77,7 +77,7 @@
 									<p class="oe_module_name">
 										<i>
 											Emision Date:
-											<field name="emision_date" />
+											<field name="emission_date" />
 										</i>
 									</p>
 								</div>
