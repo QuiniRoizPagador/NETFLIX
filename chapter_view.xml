@@ -2,17 +2,42 @@
 <openerp>
 	<data>
 
-		<record model="ir.ui.view" id="view_chapter_calendar">
-			<field name="name">view_chapter_calendar</field>
+
+		<record model="ir.ui.view" id="view_chapter_kanban">
+			<field name="name">view_chapter_kanban</field>
 			<field name="model">chapter</field>
-			<field name="type">calendar</field>
+			<field name="type">kanban</field>
 			<field name="arch" type="xml">
-				<calendar mode="month" color="name" string="chapters"
-					date_start="emission_date" date_stop="emission_date">
+				<kanban create="false">
 					<field name="name" />
-				</calendar>
+					<field name="image" />
+					<field name="emission_date" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_module_vignette">
+								<img t-att-src="kanban_image('chapter', 'image', record.id.value)"
+									class="oe_module_icon" />
+								<div class="oe_module_desc">
+									<h4>
+										<a type="open">
+											<field name="name" />
+										</a>
+									</h4>
+									<p class="oe_module_name">
+										<i>
+											Emission Date:
+											<field name="emission_date" />
+										</i>
+									</p>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
 			</field>
 		</record>
+
+
 		<record model="ir.ui.view" id="view_chapter_tree_view">
 			<field name="name">view_chapter_tree</field>
 			<field name="model">chapter</field>
@@ -56,37 +81,15 @@
 			</field>
 		</record>
 
-		<record model="ir.ui.view" id="view_chapter_kanban">
-			<field name="name">view_chapter_kanban</field>
+		<record model="ir.ui.view" id="view_chapter_calendar">
+			<field name="name">view_chapter_calendar</field>
 			<field name="model">chapter</field>
-			<field name="type">kanban</field>
+			<field name="type">calendar</field>
 			<field name="arch" type="xml">
-				<kanban create="false">
+				<calendar mode="month" color="name" string="chapters"
+					date_start="emission_date" date_stop="emission_date">
 					<field name="name" />
-					<field name="image" />
-					<field name="emission_date" />
-					<templates>
-						<t t-name="kanban-box">
-							<div class="oe_module_vignette">
-								<img t-att-src="kanban_image('chapter', 'image', record.id.value)"
-									class="oe_module_icon" />
-								<div class="oe_module_desc">
-									<h4>
-										<a type="open">
-											<field name="name" />
-										</a>
-									</h4>
-									<p class="oe_module_name">
-										<i>
-											Emission Date:
-											<field name="emission_date" />
-										</i>
-									</p>
-								</div>
-							</div>
-						</t>
-					</templates>
-				</kanban>
+				</calendar>
 			</field>
 		</record>
 
