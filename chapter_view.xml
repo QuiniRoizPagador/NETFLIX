@@ -2,17 +2,42 @@
 <openerp>
 	<data>
 
-		<record model="ir.ui.view" id="view_chapter_calendar">
-			<field name="name">view_chapter_calendar</field>
+
+		<record model="ir.ui.view" id="view_chapter_kanban">
+			<field name="name">view_chapter_kanban</field>
 			<field name="model">chapter</field>
-			<field name="type">calendar</field>
+			<field name="type">kanban</field>
 			<field name="arch" type="xml">
-				<calendar mode="month" color="name" string="chapters"
-					date_start="emision_date" date_stop="emision_date">
+				<kanban create="false">
 					<field name="name" />
-				</calendar>
+					<field name="image" />
+					<field name="emission_date" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_module_vignette">
+								<img t-att-src="kanban_image('chapter', 'image', record.id.value)"
+									class="oe_module_icon" />
+								<div class="oe_module_desc">
+									<h4>
+										<a type="open">
+											<field name="name" />
+										</a>
+									</h4>
+									<p class="oe_module_name">
+										<i>
+											Emission Date:
+											<field name="emission_date" />
+										</i>
+									</p>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
 			</field>
 		</record>
+
+
 		<record model="ir.ui.view" id="view_chapter_tree_view">
 			<field name="name">view_chapter_tree</field>
 			<field name="model">chapter</field>
@@ -33,58 +58,38 @@
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="Chapters" version="7.0">
-        			<sheet>
-        				<field name="image" widget='image' class="oe_left upoflix-picture"/>     				
-        				<div class="oe_title oe_right">
-                            <h1><field name="name"/></h1>
-                        </div>
-                        <group>
-                        	<group>
-	                    		<field name="description"/>
-	                    	</group>
-	                        <group>
-	                        	<field name="emission_date"/>
-	                        </group>
-	                        <group colspan="4">
-	                        	<field name="source" widget="url" />
-	                        </group>
-                        </group>
-        			</sheet>
-        		</form>
+					<sheet>
+						<field name="image" widget='image' class="oe_left upoflix-picture" />
+						<div class="oe_title oe_right">
+							<h1>
+								<field name="name" />
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="description" />
+							</group>
+							<group>
+								<field name="emission_date" />
+							</group>
+							<group colspan="4">
+								<field name="source" widget="url" />
+							</group>
+						</group>
+					</sheet>
+				</form>
 			</field>
 		</record>
 
-		<record model="ir.ui.view" id="view_chapter_kanban">
-			<field name="name">view_chapter_kanban</field>
+		<record model="ir.ui.view" id="view_chapter_calendar">
+			<field name="name">view_chapter_calendar</field>
 			<field name="model">chapter</field>
-			<field name="type">kanban</field>
+			<field name="type">calendar</field>
 			<field name="arch" type="xml">
-				<kanban create="false">
+				<calendar mode="month" color="name" string="chapters"
+					date_start="emission_date" date_stop="emission_date">
 					<field name="name" />
-					<field name="image" />
-					<field name="emision_date" />
-					<templates>
-						<t t-name="kanban-box">
-							<div class="oe_module_vignette">
-								<img t-att-src="kanban_image('chapter', 'image', record.id.value)"
-									class="oe_module_icon" />
-								<div class="oe_module_desc">
-									<h4>
-										<a type="open">
-											<field name="name" />
-										</a>
-									</h4>
-									<p class="oe_module_name">
-										<i>
-											Emision Date:
-											<field name="emission_date" />
-										</i>
-									</p>
-								</div>
-							</div>
-						</t>
-					</templates>
-				</kanban>
+				</calendar>
 			</field>
 		</record>
 
@@ -94,7 +99,7 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">kanban,form,tree,calendar</field>
 		</record>
-		<menuitem name="Chapters" id="show_chapters_submenu"
-			parent="submenu_management" sequence="110" action="act_chapters" />
+		<menuitem name="Chapters" id="show_chapters_submenu" parent="submenu_management"
+			sequence="110" action="act_chapters" />
 	</data>
 </openerp>
