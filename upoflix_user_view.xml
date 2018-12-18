@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record id="view_user_tree" model="ir.ui.view">
+			<field name="name">upoflix.user.tree</field>
+			<field name="model">upoflix.user</field>
+			<field name="arch" type="xml">
+				<tree string="Users">
+					<field name="name" />
+					<field name="surname" />
+					<field name="registration_date" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_user_form" model="ir.ui.view">
+			<field name="name">upoflix.user.form</field>
+			<field name="model">upoflix.user</field>
+			<field name="arch" type="xml">
+				<form string="Users" version="7.0">
+					<sheet>
+						<field name="image" widget='image' class="oe_left upoflix-picture" />
+						<div class="oe_title oe_right">
+							<h1>
+								<field name="name" />
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="surname" />
+								<field name="mail" />
+							</group>
+							<group colspan="4">
+								<field name="password" />
+							</group>
+							<group colspan="4">
+								<field name="registration_date" />
+							</group>
+
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_upoflix_users" model="ir.actions.act_window">
+			<field name="name">Users</field>
+			<field name="res_model">upoflix.user</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="submenu_user" name="User" parent="submenu_management"
+			action="action_upoflix_users" />
+	</data>
+</openerp>

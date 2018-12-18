@@ -19,21 +19,19 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
-{
-    "name": "UPOFLIX",
-    "version": "1.0",
-    "depends": ["base"],
-    "author": "Joaquin Roiz Pagador\nAndres Rueda Marin\nJose Ramon Terrero Lopez",
-    "category": "Multimedia",
-    "description": """
-    Aplicación que ofrecerá contenido multimedia para ver películas 
-    y series al espectador.
-    """,
-    "init_xml": [],
-    'data': ['main_view.xml', 'serie_view.xml', 'season_view.xml', 'chapter_view.xml', 'film_view.xml', 'upoflix_user_view.xml'],
-    'css':['static/src/css/upoflix.css'],
-    'demo_xml': [],
-    'installable': True,
-    'active': False,
-#    'certificate': 'certificate',
-}
+
+from osv import osv
+from osv import fields
+
+class upoflix_user(osv.Model):
+    _name = 'upoflix.user'
+    _description = 'This is an UPOFLIX user' 
+ 
+    _columns = {
+            'name':fields.char('Name', size=64, required=False, readonly=False),
+            'surname': fields.char('Surname', size=64, required=True),
+            'mail': fields.char('Email', size=120, required=True),
+            'password': fields.char('Password', size=64, required=True),
+            'registration_date': fields.date("Registration Date", required=True, autodate=True, readonly=True),
+            'image': fields.binary("Image"),
+        }
