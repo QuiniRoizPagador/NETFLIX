@@ -29,4 +29,5 @@ class serie(osv.osv):
     _columns = {
                 'finalization_date':fields.date('Finalization Date'),
                 'seasons': fields.one2many('season', 'serie_id', 'Seasons'),
+                'serie_fav': fields.many2many('upoflix.user', 'user_serie_fav', 'serie_id','user_id', 'Users Favorites'),
     }

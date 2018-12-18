@@ -86,6 +86,8 @@
 				</form>
 			</field>
 		</record>
+	
+		
 		<record id="act_film" model="ir.actions.act_window">
 			<field name="name">Films</field>
 			<field name="res_model">film</field>

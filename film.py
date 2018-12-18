@@ -31,4 +31,5 @@ class film(osv.Model):
     _columns = {
             'premiere_date': fields.date("Premiere Date", required=True, autodate=True),
             'source': fields.char("Source", required=False),
+            'film_fav': fields.many2many('upoflix.user', 'user_film_fav', 'film_id','user_id', 'Users Favorites'),
         }

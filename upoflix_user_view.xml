@@ -37,8 +37,21 @@
 							<group colspan="4">
 								<field name="registration_date" />
 							</group>
-
 						</group>
+					</sheet>
+					<sheet>
+						<notebook colspan="5">
+							<page string="Favorites Films">
+								<field name="user_film_favs" />
+							</page>
+						</notebook>
+					</sheet>
+					<sheet>
+						<notebook colspan="5">
+							<page string="Favorites Series">
+								<field name="user_serie_favs" />
+							</page>
+						</notebook>
 					</sheet>
 				</form>
 			</field>
