@@ -20,8 +20,15 @@
 #
 ##############################################################################
 
-import resource
-import serie
-import season
-import chapter
-import film
+from osv import osv
+from osv import fields
+
+class film(osv.Model):
+    _name = 'film'
+    _description = 'This is a film'
+    _inherit = 'resource'
+ 
+    _columns = {
+            'premiere_date': fields.date("Premiere Date", required=True, autodate=True),
+            'source': fields.char("Source", required=False),
+        }

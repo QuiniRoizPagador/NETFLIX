@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_film_kanban">
+			<field name="name">view_film_kanban</field>
+			<field name="model">film</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+				<kanban create="false">
+					<field name="name" />
+					<field name="image" />
+					<field name="premiere_date" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_module_vignette">
+								<img t-att-src="kanban_image('film', 'image', record.id.value)"
+									class="oe_module_icon" />
+								<div class="oe_module_desc">
+									<h4>
+										<a type="open">
+											<field name="name" />
+										</a>
+									</h4>
+									<p class="oe_module_name">
+										<i>
+											Emission Date:
+											<field name="premiere_date" />
+										</i>
+									</p>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+		
+		<record id="view_film_calendar" model="ir.ui.view">
+			<field name="name">film.calendar</field>
+			<field name="model">film</field>
+			<field name="arch" type="xml">
+				<calendar string="Films" mode="month" color="name"
+					date_start="premiere_date">
+					<field name="name" />
+				</calendar>
+			</field>
+		</record>
+		
+		<record id="view_film_tree" model="ir.ui.view">
+			<field name="name">film.tree</field>
+			<field name="model">film</field>
+			<field name="arch" type="xml">
+				<tree string="Films">
+					<field name="name" />
+					<field name="year" />
+					<field name="premiere_date" />
+					<field name="source" widget="url" />
+				</tree>
+			</field>
+		</record>
+		
+		<record id="view_film_form" model="ir.ui.view">
+			<field name="name">film.form</field>
+			<field name="model">film</field>
+			<field name="arch" type="xml">
+				<form string="Films" version="7.0">
+					<sheet>
+						<field name="image" widget='image' class="oe_left upoflix-picture" />
+						<div class="oe_title oe_right">
+							<h1>
+								<field name="name" />
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="year" />
+							</group>
+							<group>
+								<field name="premiere_date" />
+							</group>
+							<group colspan="4">
+								<field name="source" widget="url" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="act_film" model="ir.actions.act_window">
+			<field name="name">Films</field>
+			<field name="res_model">film</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">kanban,tree,form,calendar</field>
+		</record>
+		<menuitem id="submenu_film" name="Films" parent="submenu_management"
+		sequence="110" action="act_film" />
+	</data>
+</openerp>
