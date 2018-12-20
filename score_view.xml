@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-    	<!--<record id="view_score_graph" model="ir.ui.view">
+    	<record id="view_score_graph" model="ir.ui.view">
     		<field name="name">score.graph</field>
     		<field name="model">score</field>
     		<field name="arch" type="xml">
-    			<graph string="Scores">
-    			
+    			<graph string="Scores" type="pie">
+    				<field name="score"/>
+    				<field name="users_score"/>
     			</graph>
     		</field>
-    	</record>-->
+    	</record>
 		<record id="view_score_tree" model="ir.ui.view">
             <field name="name">score.tree</field>
             <field name="model">score</field>
@@ -17,6 +18,7 @@
                 <tree string="Scores">
                     <field name="score"/>
                     <field name="date"/>
+                    <field name="users_score"/>
                 </tree>
             </field>
         </record>
@@ -29,6 +31,7 @@
                         <group>
                         	<field name="score"/>
                         	<field name="date"/>
+                        	<field name="users_score"/>
                         </group>
         			</sheet>
         		</form>
@@ -38,7 +41,7 @@
 			<field name="name">Scores</field>
 			<field name="res_model">score</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form,graph</field>
 			<field name="view_id" ref="view_score_tree"/>
 		</record>
     	<menuitem id="submenu_score" name="Score" parent="submenu_management" action="act_score"/>

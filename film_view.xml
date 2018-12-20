@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record model="ir.ui.view" id="view_serie_kanban">
-			<field name="name">view_serie_kanban</field>
-			<field name="model">serie</field>
+		<record model="ir.ui.view" id="view_film_kanban">
+			<field name="name">view_film_kanban</field>
+			<field name="model">film</field>
 			<field name="type">kanban</field>
 			<field name="arch" type="xml">
 				<kanban create="false">
 					<field name="name" />
 					<field name="image" />
-					<field name="finalization_date" />
+					<field name="premiere_date" />
 					<templates>
 						<t t-name="kanban-box">
 							<div class="oe_module_vignette">
-								<img t-att-src="kanban_image('serie', 'image', record.id.value)"
+								<img t-att-src="kanban_image('film', 'image', record.id.value)"
 									class="oe_module_icon" />
 								<div class="oe_module_desc">
 									<h4>
@@ -23,8 +23,8 @@
 									</h4>
 									<p class="oe_module_name">
 										<i>
-											Finalization Date:
-											<field name="finalization_date" />
+											Premiere Date:
+											<field name="premiere_date" />
 										</i>
 									</p>
 								</div>
@@ -34,32 +34,36 @@
 				</kanban>
 			</field>
 		</record>
-		<record id="view_serie_calendar" model="ir.ui.view">
-			<field name="name">serie.calendar</field>
-			<field name="model">serie</field>
+
+		<record id="view_film_calendar" model="ir.ui.view">
+			<field name="name">film.calendar</field>
+			<field name="model">film</field>
 			<field name="arch" type="xml">
-				<calendar string="Series" mode="month" color="name"
-					date_start="year" date_stop="finalization_date">
+				<calendar string="Films" mode="month" color="name"
+					date_start="premiere_date">
 					<field name="name" />
 				</calendar>
 			</field>
 		</record>
-		<record id="view_serie_tree" model="ir.ui.view">
-			<field name="name">serie.tree</field>
-			<field name="model">serie</field>
+
+		<record id="view_film_tree" model="ir.ui.view">
+			<field name="name">film.tree</field>
+			<field name="model">film</field>
 			<field name="arch" type="xml">
-				<tree string="Series">
+				<tree string="Films">
 					<field name="name" />
 					<field name="year" />
-					<field name="finalization_date" />
+					<field name="premiere_date" />
+					<field name="source" widget="url" />
 				</tree>
 			</field>
 		</record>
-		<record id="view_serie_form" model="ir.ui.view">
-			<field name="name">serie.form</field>
-			<field name="model">serie</field>
+
+		<record id="view_film_form" model="ir.ui.view">
+			<field name="name">film.form</field>
+			<field name="model">film</field>
 			<field name="arch" type="xml">
-				<form string="Series" version="7.0">
+				<form string="Films" version="7.0">
 					<sheet>
 						<field name="image" widget='image' class="oe_left upoflix-picture" />
 						<div class="oe_title oe_right">
@@ -72,22 +76,21 @@
 								<field name="year" />
 							</group>
 							<group>
-								<field name="finalization_date" />
+								<field name="premiere_date" />
 							</group>
 							<group colspan="4">
 								<field name="osd" />
 							</group>
-
+							<group colspan="4">
+								<field name="source" widget="url" />
+							</group>
 							<group colspan="4">
 								<field name="director" />
 							</group>
 							<group colspan="4">
 								<notebook>
-									<page string="Seasons">
-										<field name="seasons" />
-									</page>
-									<page string="Favorites Series">
-										<field name="serie_fav" />
+									<page string="Favorites Films">
+										<field name="film_fav" />
 									</page>
 									<page string="Genders">
 										<field name="genders" />
@@ -100,19 +103,21 @@
 									</page>
 								</notebook>
 							</group>
+							
 						</group>
 					</sheet>
 				</form>
 			</field>
 		</record>
-		<record id="act_serie" model="ir.actions.act_window">
-			<field name="name">Series</field>
-			<field name="res_model">serie</field>
+
+
+		<record id="act_film" model="ir.actions.act_window">
+			<field name="name">Films</field>
+			<field name="res_model">film</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">kanban,tree,form,calendar</field>
-			<field name="view_id" ref="view_serie_kanban" />
 		</record>
-		<menuitem id="submenu_serie" name="Serie" parent="submenu_management"
-			action="act_serie" />
+		<menuitem id="submenu_film" name="Films" parent="submenu_management"
+			sequence="110" action="act_film" />
 	</data>
 </openerp>

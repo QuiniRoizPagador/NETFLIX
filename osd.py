@@ -23,11 +23,15 @@
 from osv import osv
 from osv import fields
 
-class serie(osv.osv):
-    _name = 'serie'
-    _inherit = 'resource'
+class osd(osv.osv):
+
+    _name = 'osd'
+    _description = 'this is a osd from a resource.'
+ 
     _columns = {
-                'finalization_date':fields.date('Finalization Date'),
-                'seasons': fields.one2many('season', 'serie_id', 'Seasons'),
-                'serie_fav': fields.many2many('upoflix.user', 'user_serie_fav', 'serie_id','user_id', 'Users Favorites'),
-    }
+            'name':fields.char('Name', size=64, required=True, readonly=False),
+            'composer':fields.char('Composer', size=64, required=True, readonly=False),
+            'producer':fields.char('Producer', size=64, required=True, readonly=False),
+            'studio':fields.char('Studio', size=64, readonly=False),
+            #one-to-one relation
+        }

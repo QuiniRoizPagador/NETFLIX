@@ -23,11 +23,13 @@
 from osv import osv
 from osv import fields
 
-class serie(osv.osv):
-    _name = 'serie'
+class film(osv.Model):
+    _name = 'film'
+    _description = 'This is a film'
     _inherit = 'resource'
+ 
     _columns = {
-                'finalization_date':fields.date('Finalization Date'),
-                'seasons': fields.one2many('season', 'serie_id', 'Seasons'),
-                'serie_fav': fields.many2many('upoflix.user', 'user_serie_fav', 'serie_id','user_id', 'Users Favorites'),
-    }
+            'premiere_date': fields.date("Premiere Date", required=True, autodate=True),
+            'source': fields.char("Source", required=False),
+            'film_fav': fields.many2many('upoflix.user', 'user_film_fav', 'film_id','user_id', 'Users Favorites'),
+        }

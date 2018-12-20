@@ -27,5 +27,7 @@ class score(osv.osv):
     _name = 'score'
     _columns = {
            'score': fields.integer("Score", required=True),
-           'date': fields.date('Date', required=True)
+           'date': fields.date('Date', autodate=True, required=True),
+           'users_score':fields.many2one('upoflix.user', "User"),
+           'resource_id':fields.many2one('resource', "Resource"),
     }

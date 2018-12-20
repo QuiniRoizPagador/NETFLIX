@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-	
+
 		<!-- Define Form View -->
 		<record id="view_season_form" model="ir.ui.view">
 			<field name="name">view_season_form</field>
 			<field name="model">season</field>
 			<field name="type">form</field>
 			<field name="arch" type="xml">
-				<form string="Seasons">
-					<!-- <field name="serie_id" /> -->
-					<field name="season_number" colspan="4"/>
-					<field name="start_date" />
-					<field name="end_date" />
-					<notebook colspan="5">
-						<page string="Chapters">
-							<field name="chapters" />
-						</page>
-					</notebook>
+				<form string="Seasons" version="7.0">
+					<sheet>
+						<!-- <field name="serie_id" /> -->
+						<group>
+							<group colspan="4">
+								<field name="season_number" />
+							</group>
+							<group colspan="4">
+								<field name="start_date" />
+							</group>
+							<group colspan="4">
+								<field name="end_date" />
+							</group>
+							<group colspan="4">
+								<field name="serie_id" />
+							</group>
+							<group>
+								<notebook>
+									<page string="Chapters">
+										<field name="chapters" />
+									</page>
+								</notebook>
+							</group>
+						</group>
+					</sheet>
 				</form>
 			</field>
 		</record>
-		
+
 		<!-- Define Tree View -->
 		<record id="view_season_tree" model="ir.ui.view">
 			<field name="name">view_season_tree</field>
@@ -32,25 +47,27 @@
 					<field name="season_number" />
 					<field name="start_date" />
 					<field name="end_date" />
-					<!-- <field name="serie_id" /> -->
+					<field name="serie_id" />
 					<!-- <field name="chapter_ids" /> -->
 				</tree>
 			</field>
 		</record>
-		
+
 		<!-- Define Calendar View -->
 		<record id="view_season_calendar" model="ir.ui.view">
 			<field name="name">view_season_calendar</field>
 			<field name="model">season</field>
 			<field name="type">calendar</field>
 			<field name="arch" type="xml">
-				<!-- <calendar string="Seasons" color="serie_id" mode="month" date_start="start_date" date_stop="end_date"> -->
-				<calendar string="Seasons" color="start_date" mode="month" date_start="start_date" date_stop="end_date">
-					<field name="start_date"/>
+				<!-- <calendar string="Seasons" color="serie_id" mode="month" date_start="start_date" 
+					date_stop="end_date"> -->
+				<calendar string="Seasons" color="start_date" mode="month"
+					date_start="start_date" date_stop="end_date">
+					<field name="start_date" />
 				</calendar>
 			</field>
 		</record>
-		
+
 		<!-- Define Action -->
 		<record id="act_season" model="ir.actions.act_window">
 			<field name="name">Season</field>
@@ -58,8 +75,9 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form,calendar</field>
 		</record>
-		
+
 		<!-- Define MenuItem -->
-		<menuitem id="submenu_season" name="Season" parent="submenu_management" action="act_season" />
-	</data>	
+		<menuitem id="submenu_season" name="Season" parent="submenu_management"
+			action="act_season" />
+	</data>
 </openerp>

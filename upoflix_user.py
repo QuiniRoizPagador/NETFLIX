@@ -23,11 +23,17 @@
 from osv import osv
 from osv import fields
 
-class serie(osv.osv):
-    _name = 'serie'
-    _inherit = 'resource'
+class upoflix_user(osv.Model):
+    _name = 'upoflix.user'
+    _description = 'This is an UPOFLIX user' 
+ 
     _columns = {
-                'finalization_date':fields.date('Finalization Date'),
-                'seasons': fields.one2many('season', 'serie_id', 'Seasons'),
-                'serie_fav': fields.many2many('upoflix.user', 'user_serie_fav', 'serie_id','user_id', 'Users Favorites'),
-    }
+            'name':fields.char('Name', size=64, required=False, readonly=False),
+            'surname': fields.char('Surname', size=64, required=True),
+            'mail': fields.char('Email', size=120, required=True),
+            'password': fields.char('Password', size=64, required=True),
+            'registration_date': fields.date("Registration Date", autodate=True, readonly=True),
+            'image': fields.binary("Image"),
+            'user_film_favs': fields.many2many('film', 'user_film_fav', 'user_id', 'film_id', 'Favorite Films'),
+            'user_serie_favs': fields.many2many('serie', 'user_serie_fav', 'user_id', 'serie_id', 'Favorite Series'),
+        }

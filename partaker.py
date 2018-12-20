@@ -29,9 +29,10 @@ class partaker(osv.osv):
     _description = 'this is a partaker from a resource.'
  
     _columns = {
-            'name':fields.text('Name'),
-            'country':fields.text('Country'),
+            'name':fields.char('Name', size=64, required=True, readonly=False),
+            'country':fields.many2one("res.country", "Country", required=True),
             'birth':fields.date('Birth'),
+            'image': fields.binary("Image"),
             #'resources':fields.many2many('resource','resource_partaker_rel','resource_id','partaker_id','Resources'),
             #'resources_dir':fields.one2many('resource','Guided Resources'),
         }

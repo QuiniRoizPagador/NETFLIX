@@ -37,6 +37,17 @@
 			</field>
 		</record>
 
+		<record model="ir.ui.view" id="view_chapter_calendar">
+			<field name="name">view_chapter_calendar</field>
+			<field name="model">chapter</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar mode="month" color="name" string="chapters"
+					date_start="emission_date" date_stop="emission_date">
+					<field name="name" />
+				</calendar>
+			</field>
+		</record>
 
 		<record model="ir.ui.view" id="view_chapter_tree_view">
 			<field name="name">view_chapter_tree</field>
@@ -81,23 +92,11 @@
 			</field>
 		</record>
 
-		<record model="ir.ui.view" id="view_chapter_calendar">
-			<field name="name">view_chapter_calendar</field>
-			<field name="model">chapter</field>
-			<field name="type">calendar</field>
-			<field name="arch" type="xml">
-				<calendar mode="month" color="name" string="chapters"
-					date_start="emission_date" date_stop="emission_date">
-					<field name="name" />
-				</calendar>
-			</field>
-		</record>
-
 		<record model="ir.actions.act_window" id="act_chapters">
 			<field name="name">Chapters</field>
 			<field name="res_model">chapter</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">kanban,form,tree,calendar</field>
+			<field name="view_mode">kanban,tree,form,calendar</field>
 		</record>
 		<menuitem name="Chapters" id="show_chapters_submenu" parent="submenu_management"
 			sequence="110" action="act_chapters" />
