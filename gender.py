@@ -20,8 +20,12 @@
 #
 ##############################################################################
 
-import resource
-import serie
-import season
-import chapter
-import gender
+from osv import osv
+from osv import fields
+
+class gender(osv.osv):
+    _name = 'gender'
+    _columns = {
+           'name': fields.char("Gender", size=64, required=True),
+           'description': fields.text('Description', required=True)
+    }
