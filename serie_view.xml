@@ -41,6 +41,9 @@
 	                        <group colspan="4">
 	                        	<field name="seasons"/>
 	                        </group>
+	                        <group colspan="4">
+	                        	<field name="serie_fav"/>
+	                        </group>
                         </group>
         			</sheet>
         		</form>

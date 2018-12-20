@@ -81,6 +81,9 @@
 							<group colspan="4">
 								<field name="source" widget="url" />
 							</group>
+							<group colspan="4">
+	                        	<field name="film_fav"/>
+	                        </group>
 						</group>
 					</sheet>
 				</form>
