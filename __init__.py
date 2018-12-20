@@ -25,3 +25,4 @@ import serie
 import season
 import chapter
 import gender
+import score

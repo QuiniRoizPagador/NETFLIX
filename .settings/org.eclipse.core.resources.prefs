@@ -4,5 +4,6 @@ encoding/__openerp__.py=utf-8
 encoding/chapter.py=utf-8
 encoding/gender.py=utf-8
 encoding/resource.py=utf-8
+encoding/score.py=utf-8
 encoding/season.py=utf-8
 encoding/serie.py=utf-8

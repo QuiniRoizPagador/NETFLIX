@@ -21,7 +21,7 @@
                         	<group>
 	                    		<field name="name"/>
 	                    	</group>
-	                        <group>
+	                        <group colspan="4">
 	                        	<field name="description"/>
 	                        </group>
                         </group>
