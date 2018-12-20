@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<!-- Define Form View -->
+		<record id="view_partaker_form" model="ir.ui.view">
+			<field name="name">view_partaker_form</field>
+			<field name="model">partaker</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Partakers">
+					<field name="name" />
+					<field name="country" />
+					<field name="birth" />
+				</form>
+			</field>
+		</record>
+		
+		<!-- Define Tree View -->
+		<record id="view_partaker_tree" model="ir.ui.view">
+			<field name="name">view_partaker_tree</field>
+			<field name="model">partaker</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Partakers">
+					<field name="name" />
+					<field name="country" />
+					<field name="birth" />
+				</tree>
+			</field>
+		</record>
+		
+		<!-- Define Search View -->
+		<record id="view_partaker_search" model="ir.ui.view">
+			<field name="name">view_partaker_search</field>
+			<field name="model">partaker</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Partakers">
+					<field name="name" />
+					<field name="country" />
+					<field name="birth" />
+				</search>
+			</field>
+		</record>
+		
+		<!-- Define Action -->
+		<record id="act_partaker" model="ir.actions.act_window">
+			<field name="name">Partaker</field>
+			<field name="res_model">partaker</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_partaker_search" />
+		</record>
+		
+		<!-- Define MenuItem -->
+		<menuitem id="submenu_partaker" name="Partaker" parent="categories" action="act_partaker" />
+	</data>	
+</openerp>
