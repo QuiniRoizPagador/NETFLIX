@@ -33,6 +33,8 @@ class partaker(osv.osv):
             'country':fields.many2one("res.country", "Country", required=True),
             'birth':fields.date('Birth'),
             'image': fields.binary("Image"),
-            #'resources':fields.many2many('resource','resource_partaker_rel','resource_id','partaker_id','Resources'),
-            #'resources_dir':fields.one2many('resource','Guided Resources'),
+            'series_actor':fields.many2many('serie','serie_partaker_rel','partaker_id','serie_id','Series'),
+            'films_actor':fields.many2many('film','film_partaker_rel','partaker_id','film_id','Films'),
+            'series_director':fields.one2many("serie", "director", "Series Director"),
+            'films_director':fields.one2many("film", "director", "Films Director"),
         }

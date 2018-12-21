@@ -33,8 +33,6 @@ class resource(osv.osv):
             'year':fields.date('Year', required=True),
             'image': fields.binary("Image"),
             'osd':fields.many2one("osd", "OSD", required=True),
-            'genders': fields.many2many('gender', 'resource_gender', 'resource_id', 'gender_id', 'Genders', required=True),
-            'actors': fields.many2many('partaker', 'resource_actors', 'resouce_id', 'actor_id', 'Actors'),
             'director': fields.many2one('partaker', 'Director', required=True),
             'scores':fields.one2many("score", "resource_id", "Scores"),
         }

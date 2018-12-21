@@ -27,5 +27,7 @@ class gender(osv.osv):
     _name = 'gender'
     _columns = {
            'name': fields.char("Gender", size=64, required=True),
-           'description': fields.text('Description', required=True)
+           'description': fields.text('Description', required=True),
+           'films':fields.many2many('film', 'film_gender_rel', 'gender_id', 'film_id', 'Films'),
+           'series':fields.many2many('serie', 'serie_gender_rel', 'gender_id', 'serie_id', 'Series'),
     }

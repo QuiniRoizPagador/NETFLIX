@@ -24,6 +24,16 @@
 	                        <group colspan="4">
 	                        	<field name="description"/>
 	                        </group>
+	                        <group colspan="4">
+								<notebook>
+									<page string="Series">
+										<field name="series" />
+									</page>
+									<page string="Films">
+										<field name="films" />
+									</page>
+								</notebook>
+							</group>
                         </group>
         			</sheet>
         		</form>

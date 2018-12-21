@@ -33,13 +33,14 @@ class score(osv.osv):
            'resource_id':fields.many2one('resource', "Resource"),
     }
     
-    def onchange_score(self,cr,uid,ids,score):
+    def onchange_score(self, cr, uid, ids, score):
         sc = score
         if score < 0:
             sc = 0
         elif score > 10:
             sc = 10
-        return {'value':
+        return {
+                'value':
                 {
                  'score':sc,
                  'date': str(datetime.now())

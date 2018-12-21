@@ -32,4 +32,6 @@ class film(osv.Model):
             'premiere_date': fields.date("Premiere Date", required=True, autodate=True),
             'source': fields.char("Source", required=False),
             'film_fav': fields.many2many('upoflix.user', 'user_film_fav', 'film_id','user_id', 'Users Favorites'),
+            'actors': fields.many2many('partaker', 'film_partaker_rel', 'film_id', 'partaker_id', 'Actors'),
+            'genders': fields.many2many('gender', 'film_gender_rel', 'film_id', 'gender_id', 'Genders', required=True),
         }

@@ -55,6 +55,22 @@
 							<group>
 								<field name="birth" />
 							</group>
+							<group colspan="4">
+								<notebook>
+									<page string="Series Actor">
+										<field name="series_actor" />
+									</page>
+									<page string="Films Actor">
+										<field name="films_actor" />
+									</page>
+									<page string="Series Director">
+										<field name="series_director" />
+									</page>
+									<page string="Films Director">
+										<field name="films_director" />
+									</page>
+								</notebook>
+							</group>
 						</group>
 					</sheet>
 				</form>

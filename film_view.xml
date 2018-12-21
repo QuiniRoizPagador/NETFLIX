@@ -92,13 +92,13 @@
 									<page string="Favorites Films">
 										<field name="film_fav" />
 									</page>
-									<page string="Genders">
+									 <page string="Genders">
 										<field name="genders" />
-									</page>
+									</page> 
 									<page string="Scores">
 										<field name="scores" />
 									</page>
-									<page string="Actors">
+									 <page string="Actors">
 										<field name="actors" />
 									</page>
 								</notebook>
