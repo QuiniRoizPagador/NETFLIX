@@ -29,7 +29,7 @@
         		<form string="Scores" version="7.0">
         			<sheet>
                         <group>
-                        	<field name="score"/>
+                        	<field name="score" on_change="onchange_score(score)"/>
                         	<field name="date"/>
                         	<field name="users_score"/>
                         </group>

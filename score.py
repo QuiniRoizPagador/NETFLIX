@@ -22,12 +22,27 @@
 
 from osv import osv
 from osv import fields
+from datetime import datetime
 
 class score(osv.osv):
     _name = 'score'
     _columns = {
            'score': fields.integer("Score", required=True),
-           'date': fields.date('Date', autodate=True, required=True),
+           'date': fields.date('Date', autodate=True, readonly=True),
            'users_score':fields.many2one('upoflix.user', "User"),
            'resource_id':fields.many2one('resource', "Resource"),
     }
+    
+    def onchange_score(self,cr,uid,ids,score):
+        sc = score
+        if score < 0:
+            sc = 0
+        elif score > 10:
+            sc = 10
+        return {'value':
+                {
+                 'score':sc,
+                 'date': str(datetime.now())
+                 }
+                }
+
