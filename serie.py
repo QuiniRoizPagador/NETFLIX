@@ -32,4 +32,5 @@ class serie(osv.osv):
                 'serie_fav': fields.many2many('upoflix.user', 'user_serie_fav', 'serie_id','user_id', 'Users Favorites'),
                 'genders': fields.many2many('gender', 'serie_gender_rel', 'serie_id', 'gender_id', 'Genders', required=True),
                 'actors': fields.many2many('partaker', 'serie_partaker_rel', 'serie_id', 'partaker_id', 'Actors'),
+                'scores':fields.one2many("score", "serie_id", "Scores"),
     }

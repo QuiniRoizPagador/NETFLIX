@@ -34,5 +34,4 @@ class resource(osv.osv):
             'image': fields.binary("Image"),
             'osd':fields.many2one("osd", "OSD", required=True),
             'director': fields.many2one('partaker', 'Director', required=True),
-            'scores':fields.one2many("score", "resource_id", "Scores"),
         }
