@@ -72,9 +72,12 @@
 								<field name="year" />
 							</group>
 							<group>
+								<field name="total_score" />
+							</group> 
+							<group>
 								<field name="finalization_date" />
 							</group>
-							<group colspan="4">
+							<group>
 								<field name="osd" />
 							</group>
 

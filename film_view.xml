@@ -76,17 +76,21 @@
 								<field name="year" />
 							</group>
 							<group>
+								<field name="total_score" />
+							</group> 
+							<group>
 								<field name="premiere_date" />
 							</group>
-							<group colspan="4">
+							<group>
 								<field name="osd" />
-							</group>
-							<group colspan="4">
-								<field name="source" widget="url" />
 							</group>
 							<group colspan="4">
 								<field name="director" />
 							</group>
+							<group>
+								<field name="source" widget="url" />
+							</group>
+							
 							<group colspan="4">
 								<notebook>
 									<page string="Favorites Films">
@@ -103,7 +107,6 @@
 									</page>
 								</notebook>
 							</group>
-							
 						</group>
 					</sheet>
 				</form>

@@ -33,5 +33,4 @@ class osd(osv.osv):
             'composer':fields.char('Composer', size=64, required=True, readonly=False),
             'producer':fields.char('Producer', size=64, required=True, readonly=False),
             'studio':fields.char('Studio', size=64, readonly=False),
-            #one-to-one relation
         }

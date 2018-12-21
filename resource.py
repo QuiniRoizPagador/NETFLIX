@@ -28,10 +28,21 @@ class resource(osv.osv):
     _name = 'resource'
     _description = 'This is a resource, can be a Film or a serie'
  
+    def _media(self, cr, uid, ids, field, args, context=None):
+        res = {}
+        for r in self.browse(cr,uid,ids):
+            if len(r.scores) != 0:
+                suma = sum(s.score for s in r.scores)
+                res[r.id] = suma / float(len(r.scores))
+            else: 
+                res[r.id] = 0.0
+        return res  
+ 
     _columns = {
             'name':fields.char('Name', size=64, required=True, readonly=False),
             'year':fields.date('Year', required=True),
             'image': fields.binary("Image"),
             'osd':fields.many2one("osd", "OSD", required=True),
             'director': fields.many2one('partaker', 'Director', required=True),
+            'total_score': fields.function(_media, type="float", string="Score Average")
         }
