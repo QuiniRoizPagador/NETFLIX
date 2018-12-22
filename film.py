@@ -27,6 +27,12 @@ class film(osv.Model):
     _name = 'film'
     _description = 'This is a film'
     _inherit = 'resource'
+    
+    def _votes(self, cr, uid, ids, name, args, context=None):
+        res = {}
+        for film in self.browse(cr,uid,ids):
+            res[film.id] = len(film.scores)
+        return res  
  
     _columns = {
             'premiere_date': fields.date("Premiere Date", required=True, autodate=True),
@@ -35,4 +41,5 @@ class film(osv.Model):
             'actors': fields.many2many('partaker', 'film_partaker_rel', 'film_id', 'partaker_id', 'Actors'),
             'genders': fields.many2many('gender', 'film_gender_rel', 'film_id', 'gender_id', 'Genders', required=True),
             'scores':fields.one2many("score", "film_id", "Scores"),
+            'votes_amount':fields.function(_votes, type="integer", string="Votes Amount", store=True)
         }

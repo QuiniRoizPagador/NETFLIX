@@ -31,7 +31,7 @@ class score(osv.osv):
            'date': fields.date('Date', autodate=True, readonly=True),
            'users_score':fields.many2one('upoflix.user', "User"),
            'serie_id':fields.many2one('serie', "Film"),
-           'film_id':fields.many2one('film', "Film"),
+           'film_id':fields.many2one('film', "Film")
     }
     
     def onchange_score(self, cr, uid, ids, score):

@@ -34,6 +34,18 @@
 				</kanban>
 			</field>
 		</record>
+				
+		<record id="view_serie_graph" model="ir.ui.view">
+    		<field name="name">serie.graph</field>
+    		<field name="model">serie</field>
+    		<field name="arch" type="xml">
+    			<graph string="Rated Series Graph" type="bar">
+    			    <field name="name"/>
+    			    <field name="total_score"/>
+    			</graph>
+    		</field>
+    	</record>
+    	
 		<record id="view_serie_calendar" model="ir.ui.view">
 			<field name="name">serie.calendar</field>
 			<field name="model">serie</field>
@@ -112,7 +124,7 @@
 			<field name="name">Series</field>
 			<field name="res_model">serie</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">kanban,tree,form,calendar</field>
+			<field name="view_mode">kanban,tree,form,calendar,graph</field>
 			<field name="view_id" ref="view_serie_kanban" />
 		</record>
 		<menuitem id="submenu_serie" name="Serie" parent="submenu_management"

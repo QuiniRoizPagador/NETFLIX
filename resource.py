@@ -44,5 +44,5 @@ class resource(osv.osv):
             'image': fields.binary("Image"),
             'osd':fields.many2one("osd", "OSD", required=True),
             'director': fields.many2one('partaker', 'Director', required=True),
-            'total_score': fields.function(_media, type="float", string="Score Average")
+            'total_score': fields.function(_media, type="float", string="Score Average", store=True)
         }
