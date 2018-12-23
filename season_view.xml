@@ -89,13 +89,27 @@
 				</calendar>
 			</field>
 		</record>
+		
+		<!-- Define Gantt View -->
+		<record id="view_season_gantt" model="ir.ui.view">
+			<field name="name">view_season_gantt</field>
+			<field name="model">season</field>
+			<field name="type">gantt</field>
+			<field name="arch" type="xml">
+				<gantt string="Seasons" color="serie_id" date_start="start_date" date_stop="end_date">
+					<level object="serie.serie" link="serie_id" domain="[]">
+						<field name="season_number" />
+					</level>
+				</gantt>
+			</field>
+		</record>
 
 		<!-- Define Action -->
 		<record id="act_season" model="ir.actions.act_window">
 			<field name="name">Season</field>
 			<field name="res_model">season</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">tree,form,calendar</field>
+			<field name="view_mode">tree,form,calendar,gantt</field>
 		</record>
 
 		<!-- Define MenuItem -->
