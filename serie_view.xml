@@ -60,8 +60,13 @@
 			<field name="model">serie</field>
 			<field name="arch" type="xml">
 				<form string="Series" version="7.0">
+					<separator string="Workflow" colspan="4" />
+					<field name="state" widget="statusbar"
+						statusbar_visible="new, delayed, released, cancelled, finalized"
+						statusbar_colors='{"new":"orange", "premiered":"green", 
+						"finalized":"red", "cancelled":"red"}' />
+					<field name="image" widget='image' class="oe_left upoflix-picture" />
 					<sheet>
-						<field name="image" widget='image' class="oe_left upoflix-picture" />
 						<div class="oe_title oe_right">
 							<h1>
 								<field name="name" />
@@ -73,7 +78,7 @@
 							</group>
 							<group>
 								<field name="total_score" />
-							</group> 
+							</group>
 							<group>
 								<field name="finalization_date" />
 							</group>
@@ -102,6 +107,24 @@
 										<field name="actors" />
 									</page>
 								</notebook>
+							</group>
+							<group colspan="4">
+								<group>
+									<button name="Release" states="new,delayed" string="Release"
+										colspan="1" icon="gtk-apply" />
+								</group>
+								<group>
+									<button name="Finalize" states="released" string="Finalize"
+										colspan="1" icon="gtk-apply" />
+								</group>
+								<group>
+									<button name="Delay" states="new" string="Delay"
+										colspan="1" icon="gtk-ok" />
+								</group>
+								<group>
+									<button name="Cancel" states="new,released,delayed"
+										string="Cancel" colspan="1" icon="gtk-cancel" />
+								</group>
 							</group>
 						</group>
 					</sheet>
