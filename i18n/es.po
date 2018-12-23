@@ -61,7 +61,7 @@ msgstr "Estrenar"
 #: model:ir.ui.menu,name:UPOFLIX.submenu_score
 #: field:score,score:0
 msgid "Score"
-msgstr "Puntuacióno"
+msgstr "Puntuación"
 
 #. module: UPOFLIX
 #: view:film:0
