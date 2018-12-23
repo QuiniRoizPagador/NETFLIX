@@ -34,6 +34,6 @@
 			<field name="view_mode">tree,form</field>
 			<field name="view_id" ref="view_score_tree"/>
 		</record>
-    	<menuitem id="submenu_score" name="Score" parent="submenu_management" action="act_score"/>
+    	<menuitem id="submenu_score" name="Scores" parent="submenu_users" action="act_score"/>
     </data>
 </openerp>

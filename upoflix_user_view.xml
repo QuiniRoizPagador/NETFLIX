@@ -59,7 +59,7 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 		</record>
-		<menuitem id="submenu_user" name="User" parent="submenu_management"
+		<menuitem id="submenu_user" name="Users" parent="submenu_users"
 			action="action_upoflix_users" />
 	</data>
 </openerp>

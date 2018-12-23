@@ -34,3 +34,4 @@ class osd(osv.osv):
             'producer':fields.char('Producer', size=64, required=True, readonly=False),
             'studio':fields.char('Studio', size=64, readonly=False),
         }
+    _sql_constraints = [     ('name_uniq', 'unique (name)', 'The Name of the OSD must be unique !'),      ]

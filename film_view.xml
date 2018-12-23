@@ -134,7 +134,7 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">kanban,tree,form,calendar,graph</field>
 		</record>
-		<menuitem id="submenu_film" name="Films" parent="submenu_management"
+		<menuitem id="submenu_film" name="Films" parent="submenu_resources"
 			sequence="110" action="act_film" />
 	</data>
 </openerp>

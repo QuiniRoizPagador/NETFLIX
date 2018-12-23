@@ -52,7 +52,7 @@
 		</record>
 
 		<!-- Define MenuItem -->
-		<menuitem id="submenu_osd" name="Osd" parent="submenu_management"
+		<menuitem id="submenu_osd" name="Osd" parent="submenu_meta"
 			action="act_osd" />
 	</data>
 </openerp>

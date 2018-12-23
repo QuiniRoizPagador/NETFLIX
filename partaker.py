@@ -38,3 +38,4 @@ class partaker(osv.osv):
             'series_director':fields.one2many("serie", "director", "Series Director"),
             'films_director':fields.one2many("film", "director", "Films Director"),
         }
+    _sql_constraints = [     ('name_uniq', 'unique (name)', 'The Name of the Partaker must be unique !'),      ]

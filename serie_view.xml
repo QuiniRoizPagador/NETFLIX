@@ -34,18 +34,18 @@
 				</kanban>
 			</field>
 		</record>
-				
+
 		<record id="view_serie_graph" model="ir.ui.view">
-    		<field name="name">serie.graph</field>
-    		<field name="model">serie</field>
-    		<field name="arch" type="xml">
-    			<graph string="Rated Series Graph" type="bar">
-    			    <field name="name"/>
-    			    <field name="total_score"/>
-    			</graph>
-    		</field>
-    	</record>
-    	
+			<field name="name">serie.graph</field>
+			<field name="model">serie</field>
+			<field name="arch" type="xml">
+				<graph string="Rated Series Graph" type="bar">
+					<field name="name" />
+					<field name="total_score" />
+				</graph>
+			</field>
+		</record>
+
 		<record id="view_serie_calendar" model="ir.ui.view">
 			<field name="name">serie.calendar</field>
 			<field name="model">serie</field>
@@ -72,13 +72,14 @@
 			<field name="model">serie</field>
 			<field name="arch" type="xml">
 				<form string="Series" version="7.0">
-					<separator string="Workflow" colspan="4" />
-					<field name="state" widget="statusbar"
-						statusbar_visible="new, delayed, released, cancelled, finalized"
-						statusbar_colors='{"new":"orange", "premiered":"green", 
-						"finalized":"red", "cancelled":"red"}' />
-					<field name="image" widget='image' class="oe_left upoflix-picture" />
 					<sheet>
+						<group colspan="4">
+							<field name="state" widget="statusbar" nolabel="1"
+								statusbar_visible="new, delayed, released, cancelled, finalized"
+								statusbar_colors='{"new":"orange", "premiered":"green", 
+						"finalized":"red", "cancelled":"red"}' />
+						</group>
+						<field name="image" widget='image' class="oe_left upoflix-picture" />
 						<div class="oe_title oe_right">
 							<h1>
 								<field name="name" />
@@ -139,11 +140,15 @@
 								</group>
 							</group>
 						</group>
+						<newline></newline>
+						<separator></separator>
+						<button name="removeSeasons" string="Remove Seasons"
+							type="object"></button>
 					</sheet>
 				</form>
 			</field>
 		</record>
-		
+
 		<record id="act_serie" model="ir.actions.act_window">
 			<field name="name">Series</field>
 			<field name="res_model">serie</field>
@@ -151,7 +156,7 @@
 			<field name="view_mode">kanban,tree,form,calendar,graph</field>
 			<field name="view_id" ref="view_serie_kanban" />
 		</record>
-		<menuitem id="submenu_serie" name="Serie" parent="submenu_management"
+		<menuitem id="submenu_serie" name="Series" parent="submenu_resources"
 			action="act_serie" />
 	</data>
 </openerp>

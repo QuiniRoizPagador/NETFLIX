@@ -22,6 +22,7 @@
 
 from osv import osv
 from osv import fields
+from datetime import datetime
 
 class upoflix_user(osv.Model):
     _name = 'upoflix.user'
@@ -32,8 +33,13 @@ class upoflix_user(osv.Model):
             'surname': fields.char('Surname', size=64, required=True),
             'mail': fields.char('Email', size=120, required=True),
             'password': fields.char('Password', size=64, required=True),
-            'registration_date': fields.date("Registration Date", autodate=True, readonly=True),
+            'registration_date': fields.date("Registration Date", readonly=True),
             'image': fields.binary("Image"),
             'user_film_favs': fields.many2many('film', 'user_film_fav', 'user_id', 'film_id', 'Favorite Films'),
             'user_serie_favs': fields.many2many('serie', 'user_serie_fav', 'user_id', 'serie_id', 'Favorite Series'),
         }
+    _defaults = {
+        'registration_date': datetime.now().strftime('%Y-%m-%d'),
+        }
+    _sql_constraints = [     ('name_uniq', 'unique (name)', 'The Name of the User must be unique !'),
+                        ('mail_uniq', 'unique (mail)', 'The Mail of the User must be unique !'), ]

@@ -34,5 +34,6 @@ class chapter(osv.Model):
             'emission_date': fields.date("Emision Date", required=True, autodate=True),
             'image': fields.binary("Image"),
             'source': fields.char("Source", required=False),
-            'season_id':fields.many2one('season','Season')
+            'season_id':fields.many2one('season', 'Season', ondelete="cascade")
         }
+    _sql_constraints = [     ('name_uniq', 'unique (name)', 'The Name of the Chapter must be unique !'), ]

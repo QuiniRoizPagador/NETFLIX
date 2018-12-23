@@ -98,7 +98,7 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">kanban,tree,form,calendar</field>
 		</record>
-		<menuitem name="Chapters" id="show_chapters_submenu" parent="submenu_management"
+		<menuitem name="Chapters" id="show_chapters_submenu" parent="submenu_resources"
 			sequence="110" action="act_chapters" />
 	</data>
 </openerp>

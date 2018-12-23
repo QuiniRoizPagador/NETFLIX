@@ -2,6 +2,8 @@
 <openerp>
 	<data>
 		<menuitem id="menu_upoflix" name="UPOFLIX"/>
-		<menuitem id="submenu_management" name="Management" parent="menu_upoflix"/>
+		<menuitem id="submenu_resources" name="Resources" parent="menu_upoflix"/>
+		<menuitem id="submenu_users" name="Users" parent="menu_upoflix"/>
+		<menuitem id="submenu_meta" name="Meta" parent="menu_upoflix"/>
 	</data>
 </openerp>

@@ -31,3 +31,4 @@ class gender(osv.osv):
            'films':fields.many2many('film', 'film_gender_rel', 'gender_id', 'film_id', 'Films'),
            'series':fields.many2many('serie', 'serie_gender_rel', 'gender_id', 'serie_id', 'Series'),
     }
+    _sql_constraints = [     ('name_uniq', 'unique (name)', 'The Name of the Gender must be unique !'),      ]

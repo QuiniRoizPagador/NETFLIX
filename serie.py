@@ -26,6 +26,9 @@ from osv import fields
 class serie(osv.osv):
     _name = 'serie'
     _inherit = 'resource'
+    
+    def removeSeasons(self, cr, uid, ids, context=None):
+        return self.write(cr, uid, ids, {'seasons':[(5,)]}, context=None)
     _columns = {
                 'finalization_date':fields.date('Finalization Date'),
                 'seasons': fields.one2many('season', 'serie_id', 'Seasons'),
@@ -44,3 +47,6 @@ class serie(osv.osv):
     _defaults = {  
         'state': "new",
         }
+    _sql_constraints = [     ('name_uniq', 'unique (name)', 'The Name of the Serie must be unique !'),  
+                            ('seasons_uniq', 'unique (seasons)', 'The Season reference must be unique !'),
+                             ('osd_uniq', 'unique (osd)', 'The OSD must be unique !'),]

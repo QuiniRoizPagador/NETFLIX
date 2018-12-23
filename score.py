@@ -28,12 +28,16 @@ class score(osv.osv):
     _name = 'score'
     _columns = {
            'score': fields.integer("Score", required=True),
-           'date': fields.date('Date', autodate=True, readonly=True),
-           'users_score':fields.many2one('upoflix.user', "User"),
+           'date': fields.date('Date', readonly=True),
+           'users_score':fields.many2one('upoflix.user', "User", required=True),
            'serie_id':fields.many2one('serie', "Film"),
            'film_id':fields.many2one('film', "Film")
     }
-    
+    _sql_constraints = [     ('user_film_uniq', 'unique (users_score, film_id)', 'The Film Score must be unique !'),
+                         ('user_serie_uniq', 'unique (users_score, serie_id)', 'The Serie Score must be unique !'), ]
+    _defaults = {
+        'date': datetime.now().strftime('%Y-%m-%d'),
+        }
     def onchange_score(self, cr, uid, ids, score):
         sc = score
         if score < 0:
@@ -44,7 +48,6 @@ class score(osv.osv):
                 'value':
                 {
                  'score':sc,
-                 'date': str(datetime.now())
                  }
                 }
 

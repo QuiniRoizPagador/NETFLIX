@@ -24,6 +24,9 @@ from osv import osv
 from osv import fields
 
 class season(osv.osv):
+    
+    def removeChapters(self, cr, uid, ids, context=None):
+        return self.write(cr, uid, ids, {'chapters':[(5,)]}, context=None)
 
     _name = 'season'
     _description = 'this is a season from a serie.'
@@ -32,16 +35,12 @@ class season(osv.osv):
             'season_number':fields.integer("Season", required=True),
             'start_date':fields.date('Start Date'),
             'end_date':fields.date('End Date'),
-            'serie_id':fields.many2one('serie', 'Serie'),
+            'serie_id':fields.many2one('serie', 'Serie', required=True, ondelete="cascade"),
             'chapters':fields.one2many('chapter', 'season_id', 'Chapters'),
-            'state':fields.selection([
-                                           ("new", "New"),
-                                           ("released", "Released"),
-                                           ("cancelled", "Cancelled"),
-                                           ("finalized", "Finalized"),
-                                           ("delayed", "Delayed"),
-                                           ], "Status"),
         }
-    _defaults = {  
-        'state': "new",
-        }
+    def _check_season_number(self, cr, uid, ids): 
+        return self.browse(cr, uid, ids)[0].season_number > 0
+    
+    _constraints = [(_check_season_number, 'Error: Invalid Season Number', ['season_number']), ] 
+    _sql_constraints = [ ('chapters_uniques', 'unique(chapters)', 'The chapter reference must be unique!'),
+                         ]

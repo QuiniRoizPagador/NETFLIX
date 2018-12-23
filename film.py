@@ -30,16 +30,18 @@ class film(osv.Model):
     
     def _votes(self, cr, uid, ids, name, args, context=None):
         res = {}
-        for film in self.browse(cr,uid,ids):
+        for film in self.browse(cr, uid, ids):
             res[film.id] = len(film.scores)
         return res  
  
     _columns = {
             'premiere_date': fields.date("Premiere Date", required=True, autodate=True),
             'source': fields.char("Source", required=False),
-            'film_fav': fields.many2many('upoflix.user', 'user_film_fav', 'film_id','user_id', 'Users Favorites'),
+            'film_fav': fields.many2many('upoflix.user', 'user_film_fav', 'film_id', 'user_id', 'Users Favorites'),
             'actors': fields.many2many('partaker', 'film_partaker_rel', 'film_id', 'partaker_id', 'Actors'),
             'genders': fields.many2many('gender', 'film_gender_rel', 'film_id', 'gender_id', 'Genders', required=True),
             'scores':fields.one2many("score", "film_id", "Scores"),
             'votes_amount':fields.function(_votes, type="integer", string="Votes Amount", store=True)
         }
+    _sql_constraints = [     ('name_uniq', 'unique (name)', 'The Name of the Film must be unique !'),
+                             ('osd_uniq', 'unique (osd)', 'The OSD must be unique !'), ]

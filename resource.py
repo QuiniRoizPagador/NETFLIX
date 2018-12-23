@@ -30,7 +30,7 @@ class resource(osv.osv):
  
     def _media(self, cr, uid, ids, field, args, context=None):
         res = {}
-        for r in self.browse(cr,uid,ids):
+        for r in self.browse(cr, uid, ids):
             if len(r.scores) != 0:
                 suma = sum(s.score for s in r.scores)
                 res[r.id] = suma / float(len(r.scores))

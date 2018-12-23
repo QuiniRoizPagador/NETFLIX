@@ -23,7 +23,7 @@
 									</h4>
 									<p class="oe_module_name">
 										<i>
-											Birth:
+											Country:
 											<field name="country" />
 										</i>
 									</p>
@@ -122,7 +122,7 @@
 		</record>
 
 		<!-- Define MenuItem -->
-		<menuitem id="submenu_partaker" name="Partaker" parent="submenu_management"
+		<menuitem id="submenu_partaker" name="Partakers" parent="submenu_meta"
 			action="act_partaker" />
 	</data>
 </openerp>
