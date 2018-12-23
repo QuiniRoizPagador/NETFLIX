@@ -108,6 +108,7 @@
 				</form>
 			</field>
 		</record>
+		
 		<record id="act_serie" model="ir.actions.act_window">
 			<field name="name">Series</field>
 			<field name="res_model">serie</field>
