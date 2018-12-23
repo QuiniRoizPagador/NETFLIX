@@ -32,6 +32,16 @@ class season(osv.osv):
             'season_number':fields.integer("Season", required=True),
             'start_date':fields.date('Start Date'),
             'end_date':fields.date('End Date'),
-            'serie_id':fields.many2one('serie','Serie'),
+            'serie_id':fields.many2one('serie', 'Serie'),
             'chapters':fields.one2many('chapter', 'season_id', 'Chapters'),
+            'state':fields.selection([
+                                           ("new", "New"),
+                                           ("released", "Released"),
+                                           ("cancelled", "Cancelled"),
+                                           ("finalized", "Finalized"),
+                                           ("delayed", "Delayed"),
+                                           ], "Status"),
+        }
+    _defaults = {  
+        'state': "new",
         }

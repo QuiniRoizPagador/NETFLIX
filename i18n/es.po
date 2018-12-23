@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20151115\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-29 21:08+0000\n"
-"PO-Revision-Date: 2018-11-29 21:08+0000\n"
+"POT-Creation-Date: 2018-12-23 15:34+0000\n"
+"PO-Revision-Date: 2018-12-23 15:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,19 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: UPOFLIX
+#: view:partaker:0
+msgid "Name or Country"
+msgstr "Nombre o País"
+
+#. module: UPOFLIX
 #: model:ir.ui.menu,name:UPOFLIX.submenu_management
 msgid "Management"
 msgstr "Gestión"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "Agrupar por..."
+msgstr "Agrupar por..."
 
 #. module: UPOFLIX
 #: field:chapter,name:0
@@ -26,24 +36,71 @@ msgid "Title"
 msgstr "Título"
 
 #. module: UPOFLIX
+#: view:serie:0
+msgid "Finalization Date:"
+msgstr "Fecha de Finalización:"
+
+#. module: UPOFLIX
 #: view:chapter:0
 msgid "chapters"
 msgstr "capítulos"
 
 #. module: UPOFLIX
-#: field:chapter,source:0
-msgid "Source"
-msgstr "Referencia"
+#: view:season:0
+#: view:serie:0
+msgid "Delay"
+msgstr "Retrasar"
 
 #. module: UPOFLIX
-#: model:ir.ui.menu,name:UPOFLIX.menu_upoflix
-msgid "UPOFLIX"
-msgstr "UPOFLIX"
+#: view:season:0
+#: view:serie:0
+msgid "Release"
+msgstr "Estrenar"
 
 #. module: UPOFLIX
-#: field:serie,finalization_date:0
-msgid "Finalization Date"
-msgstr "Fecha de Finalización"
+#: model:ir.ui.menu,name:UPOFLIX.submenu_score
+#: field:score,score:0
+msgid "Score"
+msgstr "Puntuación"
+
+#. module: UPOFLIX
+#: view:film:0
+#: field:film,actors:0
+#: view:serie:0
+#: field:serie,actors:0
+msgid "Actors"
+msgstr "Actores"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_gender
+msgid "gender"
+msgstr "Género"
+
+#. module: UPOFLIX
+#: view:film:0
+#: view:gender:0
+#: field:gender,films:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_film
+#: model:ir.ui.menu,name:UPOFLIX.submenu_film
+#: field:partaker,films_actor:0
+msgid "Films"
+msgstr "Películas"
+
+#. module: UPOFLIX
+#: selection:season,state:0
+#: selection:serie,state:0
+msgid "New"
+msgstr "Nueva"
+
+#. module: UPOFLIX
+#: field:upoflix.user,registration_date:0
+msgid "Registration Date"
+msgstr "Fecha de Registro"
+
+#. module: UPOFLIX
+#: field:upoflix.user,mail:0
+msgid "Email"
+msgstr "Correo Electrónico"
 
 #. module: UPOFLIX
 #: model:ir.model,name:UPOFLIX.model_resource
@@ -52,9 +109,33 @@ msgid "This is a resource, can be a Film or a serie"
 msgstr "Esto es un recurso, puede ser una película o una serie"
 
 #. module: UPOFLIX
+#: field:season,state:0
+#: field:serie,state:0
+msgid "Status"
+msgstr "Estado"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "Series Actor"
+msgstr "Series del Actor"
+
+#. module: UPOFLIX
 #: field:chapter,description:0
+#: field:gender,description:0
 msgid "Description"
 msgstr "Descripción"
+
+#. module: UPOFLIX
+#: view:season:0
+#: view:serie:0
+msgid "Finalize"
+msgstr "Finalizar"
+
+#. module: UPOFLIX
+#: model:ir.ui.menu,name:UPOFLIX.submenu_serie
+#: field:season,serie_id:0
+msgid "Serie"
+msgstr "Serie"
 
 #. module: UPOFLIX
 #: field:chapter,season_id:0
@@ -65,16 +146,97 @@ msgid "Season"
 msgstr "Temporada"
 
 #. module: UPOFLIX
-#: model:ir.ui.menu,name:UPOFLIX.submenu_serie
-#: field:season,serie_id:0
-msgid "Serie"
-msgstr "Serie"
+#: selection:season,state:0
+#: selection:serie,state:0
+msgid "Delayed"
+msgstr "Retrasada"
+
+#. module: UPOFLIX
+#: view:film:0
+#: view:upoflix.user:0
+msgid "Favorites Films"
+msgstr "Películas Favoritas"
+
+#. module: UPOFLIX
+#: field:film,director:0
+#: field:resource,director:0
+#: field:serie,director:0
+msgid "Director"
+msgstr "Director"
+
+#. module: UPOFLIX
+#: selection:season,state:0
+#: selection:serie,state:0
+msgid "Released"
+msgstr "Released"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_score
+msgid "score"
+msgstr "puntuación"
+
+#. module: UPOFLIX
+#: field:serie,finalization_date:0
+msgid "Finalization Date"
+msgstr "Fecha de Finalización"
+
+#. module: UPOFLIX
+#: model:ir.ui.menu,name:UPOFLIX.submenu_user
+#: field:score,users_score:0
+msgid "User"
+msgstr "Usuario"
+
+#. module: UPOFLIX
+#: field:partaker,birth:0
+msgid "Birth"
+msgstr "Nacimiento"
+
+#. module: UPOFLIX
+#: field:gender,name:0
+#: model:ir.ui.menu,name:UPOFLIX.submenu_gender
+msgid "Gender"
+msgstr "Género"
+
+#. module: UPOFLIX
+#: field:score,date:0
+msgid "Date"
+msgstr "Fecha"
 
 #. module: UPOFLIX
 #: view:season:0
+#: view:serie:0
 #: field:serie,seasons:0
 msgid "Seasons"
 msgstr "Temporadas"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_upoflix_user
+msgid "This is an UPOFLIX user"
+msgstr "Este es un usuario de UPOFLIX"
+
+#. module: UPOFLIX
+#: field:upoflix.user,password:0
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "Partakers"
+msgstr "Participantes"
+
+#. module: UPOFLIX
+#: field:film,osd:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_osd
+#: field:resource,osd:0
+#: field:serie,osd:0
+msgid "OSD"
+msgstr "BSO"
+
+#. module: UPOFLIX
+#: view:partaker:0
+#: field:partaker,series_director:0
+msgid "Series Director"
+msgstr "Series de Director"
 
 #. module: UPOFLIX
 #: field:season,end_date:0
@@ -82,15 +244,68 @@ msgid "End Date"
 msgstr "Fecha Final"
 
 #. module: UPOFLIX
+#: model:ir.ui.menu,name:UPOFLIX.menu_upoflix
+msgid "UPOFLIX"
+msgstr "UPOFLIX"
+
+#. module: UPOFLIX
+#: model:ir.actions.act_window,name:UPOFLIX.action_upoflix_users
+#: view:upoflix.user:0
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: UPOFLIX
+#: field:film,name:0
+#: field:osd,name:0
+#: field:partaker,name:0
 #: field:resource,name:0
 #: field:serie,name:0
+#: field:upoflix.user,name:0
 msgid "Name"
 msgstr "Nombre"
+
+#. module: UPOFLIX
+#: view:season:0
+#: view:serie:0
+msgid "Workflow"
+msgstr "Flujo de trabajo"
 
 #. module: UPOFLIX
 #: model:ir.model,name:UPOFLIX.model_season
 msgid "this is a season from a serie."
 msgstr "Esta es una temporada de una serie."
+
+#. module: UPOFLIX
+#: view:partaker:0
+#: field:partaker,country:0
+msgid "Country"
+msgstr "Country"
+
+#. module: UPOFLIX
+#: model:ir.actions.act_window,name:UPOFLIX.act_partaker
+#: model:ir.ui.menu,name:UPOFLIX.submenu_partaker
+msgid "Partaker"
+msgstr "Participante"
+
+#. module: UPOFLIX
+#: view:film:0
+#: field:film,scores:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_score
+#: view:score:0
+#: view:serie:0
+#: field:serie,scores:0
+msgid "Scores"
+msgstr "Puntuaciones"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_chapter
+msgid "This is a chapter form a season in a serie"
+msgstr "Este es un capítulo de una temporada en una serie"
+
+#. module: UPOFLIX
+#: field:osd,studio:0
+msgid "Studio"
+msgstr "Estudio"
 
 #. module: UPOFLIX
 #: view:chapter:0
@@ -99,21 +314,113 @@ msgstr "tree_string"
 
 #. module: UPOFLIX
 #: view:chapter:0
-msgid "Emision Date:"
-msgstr "Fecha de Emisión :"
+msgid "Emission Date:"
+msgstr "Fecha de emision:"
 
 #. module: UPOFLIX
+#: field:upoflix.user,user_film_favs:0
+msgid "Favorite Films"
+msgstr "Películas favoritas"
+
+#. module: UPOFLIX
+#: selection:season,state:0
+#: selection:serie,state:0
+msgid "Cancelled"
+msgstr "Cancelada"
+
+#. module: UPOFLIX
+#: view:film:0
+#: field:film,genders:0
+#: view:gender:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_gender
+#: view:serie:0
+#: field:serie,genders:0
+msgid "Genders"
+msgstr "Géneros"
+
+#. module: UPOFLIX
+#: field:film,premiere_date:0
+msgid "Premiere Date"
+msgstr "Fecha de Estreno"
+
+#. module: UPOFLIX
+#: field:season,start_date:0
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_osd
+msgid "this is a osd from a resource."
+msgstr "Esta es una bso de un recurso."
+
+#. module: UPOFLIX
+#: view:partaker:0
+#: field:partaker,films_director:0
+msgid "Films Director"
+msgstr "Películas de Director"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "With Birth"
+msgstr "Con Fecha de Nacimiento"
+
+#. module: UPOFLIX
+#: field:film,total_score:0
+#: field:resource,total_score:0
+#: field:serie,total_score:0
+msgid "Score Average"
+msgstr "Puntuación Media"
+
+#. module: UPOFLIX
+#: field:upoflix.user,surname:0
+msgid "Surname"
+msgstr "Apellido/s"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "Birth:"
+msgstr "Fecha de Nacimiento:"
+
+#. module: UPOFLIX
+#: field:osd,producer:0
+msgid "Producer"
+msgstr "Productor"
+
+#. module: UPOFLIX
+#: selection:season,state:0
+#: selection:serie,state:0
+msgid "Finalized"
+msgstr "Finalizada"
+
+#. module: UPOFLIX
+#: field:chapter,source:0
+#: field:film,source:0
+msgid "Source"
+msgstr "Referencia"
+
+#. module: UPOFLIX
+#: view:gender:0
+#: field:gender,series:0
 #: model:ir.actions.act_window,name:UPOFLIX.act_serie
+#: field:partaker,series_actor:0
 #: view:serie:0
 msgid "Series"
 msgstr "Series"
 
 #. module: UPOFLIX
 #: field:chapter,image:0
+#: field:film,image:0
+#: field:partaker,image:0
 #: field:resource,image:0
 #: field:serie,image:0
+#: field:upoflix.user,image:0
 msgid "Image"
 msgstr "Imagen"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_film
+msgid "This is a film"
+msgstr "Esto es una película"
 
 #. module: UPOFLIX
 #: view:chapter:0
@@ -125,23 +432,69 @@ msgid "Chapters"
 msgstr "Capítulos"
 
 #. module: UPOFLIX
-#: field:chapter,emision_date:0
+#: model:ir.model,name:UPOFLIX.model_partaker
+msgid "this is a partaker from a resource."
+msgstr "Esto es un participante de un recurso."
+
+#. module: UPOFLIX
+#: field:film,film_fav:0
+#: field:serie,serie_fav:0
+msgid "Users Favorites"
+msgstr "Favoritos de Usuarios"
+
+#. module: UPOFLIX
+#: view:film:0
+msgid "Premiere Date:"
+msgstr "Fecha de Estreno:"
+
+#. module: UPOFLIX
+#: field:chapter,emission_date:0
 msgid "Emision Date"
 msgstr "Fecha de Emisión"
 
 #. module: UPOFLIX
-#: model:ir.model,name:UPOFLIX.model_chapter
-msgid "This is a chapter form a season in a serie"
-msgstr "Este es un capítulo de una temporada en una serie"
+#: field:osd,composer:0
+msgid "Composer"
+msgstr "Compositor"
 
 #. module: UPOFLIX
+#: field:film,year:0
 #: field:resource,year:0
 #: field:serie,year:0
 msgid "Year"
 msgstr "Año"
 
 #. module: UPOFLIX
-#: field:season,start_date:0
-msgid "Start Date"
-msgstr "Fecha de Inicio"
+#: view:season:0
+#: view:serie:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: UPOFLIX
+#: field:upoflix.user,user_serie_favs:0
+msgid "Favorite Series"
+msgstr "Series Favoritas"
+
+#. module: UPOFLIX
+#: view:serie:0
+#: view:upoflix.user:0
+msgid "Favorites Series"
+msgstr "Series Favoritas"
+
+#. module: UPOFLIX
+#: model:ir.ui.menu,name:UPOFLIX.submenu_osd
+#: view:osd:0
+msgid "Osd"
+msgstr "Bso"
+
+#. module: UPOFLIX
+#: field:score,film_id:0
+#: field:score,serie_id:0
+msgid "Film"
+msgstr "Film"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "Films Actor"
+msgstr "Films Actor"
 

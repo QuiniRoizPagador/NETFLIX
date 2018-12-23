@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="wkf_serie" model="workflow">
+			<field name="name">serie.basic</field>
+			<field name="osv">serie</field>
+			<field name="on_create">True</field>
+		</record>
+
+		<record id="act_serie_new" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_serie" />
+			<field name="flow_start">True</field>
+			<field name="name">New</field>
+			<field name="action">function</field>
+			<field name="kind">dummy</field>
+		</record>
+
+		<record id="act_serie_delayed" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_serie" />
+			<field name="name">Delay</field>
+			<field name="action">write({'state':'delayed'})</field>
+			<field name="kind">function</field>
+		</record>
+
+		<record id="act_serie_released" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_serie" />
+			<field name="name">Release</field>
+			<field name="action">write({'state':'released'})</field>
+			<field name="kind">function</field>
+		</record>
+
+		<record id="act_serie_finalized" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_serie" />
+			<field name="flow_stop">True</field>
+			<field name="name">Finalize</field>
+			<field name="action">write({'state':'finalized'})</field>
+			<field name="kind">function</field>
+		</record>
+
+
+		<record id="act_serie_cancelled" model="workflow.activity">
+			<field name="wkf_id" ref="wkf_serie" />
+			<field name="flow_stop">True</field>
+			<field name="name">Cancel</field>
+			<field name="action">write({'state':'cancelled'})</field>
+			<field name="kind">function</field>
+		</record>
+
+		<record id="transition_released" model="workflow.transition">
+			<field name="act_from" ref="act_serie_new" />
+			<field name="act_to" ref="act_serie_released" />
+			<field name="signal">Release</field>
+		</record>
+		<record id="transition_finalized" model="workflow.transition">
+			<field name="act_from" ref="act_serie_released" />
+			<field name="act_to" ref="act_serie_finalized" />
+			<field name="signal">Finalize</field>
+		</record>
+		<record id="transition_released_cancelled" model="workflow.transition">
+			<field name="act_from" ref="act_serie_released" />
+			<field name="act_to" ref="act_serie_cancelled" />
+			<field name="signal">Cancel</field>
+		</record>
+
+		<record id="transition_new_cancelled" model="workflow.transition">
+			<field name="act_from" ref="act_serie_new" />
+			<field name="act_to" ref="act_serie_cancelled" />
+			<field name="signal">Cancel</field>
+		</record>
+
+		<record id="transition_new_delayed" model="workflow.transition">
+			<field name="act_from" ref="act_serie_new" />
+			<field name="act_to" ref="act_serie_delayed" />
+			<field name="signal">Delay</field>
+		</record>
+
+		<record id="transition_delayed_released" model="workflow.transition">
+			<field name="act_from" ref="act_serie_delayed" />
+			<field name="act_to" ref="act_serie_released" />
+			<field name="signal">Release</field>
+		</record>
+
+		<record id="transition_delayed_cancelled" model="workflow.transition">
+			<field name="act_from" ref="act_serie_delayed" />
+			<field name="act_to" ref="act_serie_cancelled" />
+			<field name="signal">Cancel</field>
+		</record>
+
+	</data>
+</openerp>
