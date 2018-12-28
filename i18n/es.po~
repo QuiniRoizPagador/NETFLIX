@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0-20151115\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-29 21:08+0000\n"
-"PO-Revision-Date: 2018-11-29 21:08+0000\n"
+"POT-Creation-Date: 2018-12-28 22:15+0000\n"
+"PO-Revision-Date: 2018-12-28 22:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: UPOFLIX
-#: model:ir.ui.menu,name:UPOFLIX.submenu_management
-msgid "Management"
-msgstr "Gestión"
+#: view:partaker:0
+msgid "Name or Country"
+msgstr "Nombre o País"
 
 #. module: UPOFLIX
 #: field:chapter,name:0
@@ -26,94 +26,129 @@ msgid "Title"
 msgstr "Título"
 
 #. module: UPOFLIX
+#: view:serie:0
+msgid "Finalization Date:"
+msgstr "Fecha de Finalización:"
+
+#. module: UPOFLIX
 #: view:chapter:0
 msgid "chapters"
 msgstr "capítulos"
 
 #. module: UPOFLIX
-#: field:chapter,source:0
-msgid "Source"
-msgstr "Referencia"
+#: sql_constraint:chapter:0
+msgid "The Name of the Chapter must be unique !"
+msgstr "¡ El nombre del capítulo debe ser único !"
 
 #. module: UPOFLIX
-#: model:ir.ui.menu,name:UPOFLIX.menu_upoflix
-msgid "UPOFLIX"
-msgstr "UPOFLIX"
+#: view:serie:0
+msgid "Release"
+msgstr "Estreno"
 
 #. module: UPOFLIX
-#: field:serie,finalization_date:0
-msgid "Finalization Date"
-msgstr "Fecha de Finalización"
+#: view:film:0
+#: field:film,actors:0
+#: view:serie:0
+#: field:serie,actors:0
+msgid "Actors"
+msgstr "Actores"
 
 #. module: UPOFLIX
-#: model:ir.model,name:UPOFLIX.model_resource
-#: model:ir.model,name:UPOFLIX.model_serie
-msgid "This is a resource, can be a Film or a serie"
-msgstr "Esto es un recurso, puede ser una película o una serie"
+#: view:film:0
+#: view:gender:0
+#: field:gender,films:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_film
+#: model:ir.ui.menu,name:UPOFLIX.submenu_film
+#: field:partaker,films_actor:0
+msgid "Films"
+msgstr "Películas"
 
 #. module: UPOFLIX
-#: field:chapter,description:0
-msgid "Description"
-msgstr "Descripción"
+#: field:upoflix.user,registration_date:0
+msgid "Registration Date"
+msgstr "Fecha de Registro"
 
 #. module: UPOFLIX
-#: field:chapter,season_id:0
-#: model:ir.actions.act_window,name:UPOFLIX.act_season
-#: model:ir.ui.menu,name:UPOFLIX.submenu_season
-#: field:season,season_number:0
-msgid "Season"
-msgstr "Temporada"
+#: view:film:0
+#: view:upoflix.user:0
+msgid "Favorites Films"
+msgstr "Películas Favoritas"
 
 #. module: UPOFLIX
-#: model:ir.ui.menu,name:UPOFLIX.submenu_serie
+#: model:ir.ui.menu,name:UPOFLIX.submenu_resources
+msgid "Resources"
+msgstr "Resources"
+
+#. module: UPOFLIX
+#: field:film,director:0
+#: field:resource,director:0
+#: field:serie,director:0
+msgid "Director"
+msgstr "Director"
+
+#. module: UPOFLIX
 #: field:season,serie_id:0
 msgid "Serie"
 msgstr "Serie"
 
 #. module: UPOFLIX
-#: view:season:0
-#: field:serie,seasons:0
-msgid "Seasons"
-msgstr "Temporadas"
+#: field:osd,studio:0
+msgid "Studio"
+msgstr "Estudio"
 
 #. module: UPOFLIX
-#: field:season,end_date:0
-msgid "End Date"
-msgstr "Fecha Final"
+#: field:partaker,birth:0
+msgid "Birth"
+msgstr "Nacimiento"
 
 #. module: UPOFLIX
-#: field:resource,name:0
-#: field:serie,name:0
-msgid "Name"
-msgstr "Nombre"
-
-#. module: UPOFLIX
-#: model:ir.model,name:UPOFLIX.model_season
-msgid "this is a season from a serie."
-msgstr "Esta es una temporada de una serie."
-
-#. module: UPOFLIX
-#: view:chapter:0
-msgid "tree_string"
-msgstr "tree_string"
-
-#. module: UPOFLIX
-#: view:chapter:0
-msgid "Emision Date:"
-msgstr "Fecha de Emisión :"
-
-#. module: UPOFLIX
-#: model:ir.actions.act_window,name:UPOFLIX.act_serie
+#: view:film:0
+#: field:film,scores:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_score
+#: model:ir.ui.menu,name:UPOFLIX.submenu_score
+#: view:score:0
 #: view:serie:0
-msgid "Series"
-msgstr "Series"
+#: field:serie,scores:0
+msgid "Scores"
+msgstr "Puntuaciones"
 
 #. module: UPOFLIX
-#: field:chapter,image:0
-#: field:resource,image:0
-#: field:serie,image:0
-msgid "Image"
-msgstr "Imagen"
+#: model:ir.ui.menu,name:UPOFLIX.submenu_partaker
+#: view:partaker:0
+msgid "Partakers"
+msgstr "Participantes"
+
+#. module: UPOFLIX
+#: sql_constraint:osd:0
+msgid "The Name of the OSD must be unique !"
+msgstr "¡ El nombre de la BSO debe ser único !"
+
+#. module: UPOFLIX
+#: selection:serie,state:0
+msgid "Cancelled"
+msgstr "Cancelada"
+
+#. module: UPOFLIX
+#: field:film,premiere_date:0
+msgid "Premiere Date"
+msgstr "Fecha de Estreno"
+
+#. module: UPOFLIX
+#: field:film,total_score:0
+#: field:resource,total_score:0
+#: field:serie,total_score:0
+msgid "Score Average"
+msgstr "Puntuación Media"
+
+#. module: UPOFLIX
+#: field:osd,producer:0
+msgid "Producer"
+msgstr "Productor"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_gender
+msgid "gender"
+msgstr "Género"
 
 #. module: UPOFLIX
 #: view:chapter:0
@@ -125,23 +160,427 @@ msgid "Chapters"
 msgstr "Capítulos"
 
 #. module: UPOFLIX
-#: field:chapter,emision_date:0
-msgid "Emision Date"
-msgstr "Fecha de Emisión"
-
-#. module: UPOFLIX
 #: model:ir.model,name:UPOFLIX.model_chapter
 msgid "This is a chapter form a season in a serie"
 msgstr "Este es un capítulo de una temporada en una serie"
 
 #. module: UPOFLIX
+#: view:serie:0
+msgid "Rated Series Graph"
+msgstr "Rated Series Graph"
+
+#. module: UPOFLIX
+#: sql_constraint:film:0
+msgid "The Name of the Film must be unique !"
+msgstr "¡ El nombre de la Película debe ser único !"
+
+#. module: UPOFLIX
+#: field:chapter,source:0
+#: field:film,source:0
+msgid "Source"
+msgstr "Referencia"
+
+#. module: UPOFLIX
+#: field:upoflix.user,user_serie_favs:0
+msgid "Favorite Series"
+msgstr "Series Favoritas"
+
+#. module: UPOFLIX
+#: selection:serie,state:0
+msgid "New"
+msgstr "Nueva"
+
+#. module: UPOFLIX
+#: field:upoflix.user,mail:0
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_resource
+#: model:ir.model,name:UPOFLIX.model_serie
+msgid "This is a resource, can be a Film or a serie"
+msgstr "Esto es un recurso, puede ser una película o una serie"
+
+#. module: UPOFLIX
+#: view:partaker:0
+#: field:partaker,films_director:0
+msgid "Films Director"
+msgstr "Películas de Director"
+
+#. module: UPOFLIX
+#: view:serie:0
+msgid "Finalize"
+msgstr "Finalizar"
+
+#. module: UPOFLIX
+#: field:chapter,season_id:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_season
+#: field:season,season_number:0
+msgid "Season"
+msgstr "Temporada"
+
+#. module: UPOFLIX
+#: sql_constraint:upoflix.user:0
+msgid "The Name of the User must be unique !"
+msgstr "¡ El nombre del Usuario debe ser único !"
+
+#. module: UPOFLIX
+#: selection:serie,state:0
+msgid "Released"
+msgstr "Estrenada"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_score
+msgid "score"
+msgstr "puntuación"
+
+#. module: UPOFLIX
+#: field:gender,name:0
+msgid "Gender"
+msgstr "Género"
+
+#. module: UPOFLIX
+#: field:film,osd:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_osd
+#: field:resource,osd:0
+#: field:serie,osd:0
+msgid "OSD"
+msgstr "BSO"
+
+#. module: UPOFLIX
+#: field:osd,composer:0
+msgid "Composer"
+msgstr "Compositor"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_season
+msgid "this is a season from a serie."
+msgstr "Esta es una temporada de una serie."
+
+#. module: UPOFLIX
+#: view:serie:0
+msgid "Remove Seasons"
+msgstr "Eliminar temporadas"
+
+#. module: UPOFLIX
+#: view:chapter:0
+msgid "tree_string"
+msgstr "tree_string"
+
+#. module: UPOFLIX
+#: sql_constraint:season:0
+msgid "The chapter reference must be unique!"
+msgstr "¡ La referencia al capítulo debe ser única !"
+
+#. module: UPOFLIX
+#: view:chapter:0
+msgid "Emission Date:"
+msgstr "Fecha de emision:"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "Country:"
+msgstr "País:"
+
+#. module: UPOFLIX
+#: field:chapter,image:0
+#: field:film,image:0
+#: field:partaker,image:0
+#: field:resource,image:0
+#: field:serie,image:0
+#: field:upoflix.user,image:0
+msgid "Image"
+msgstr "Imagen"
+
+#. module: UPOFLIX
+#: view:film:0
+msgid "Premiere Date:"
+msgstr "Fecha de Estreno:"
+
+#. module: UPOFLIX
+#: model:ir.ui.menu,name:UPOFLIX.submenu_meta
+msgid "Meta"
+msgstr "Meta"
+
+#. module: UPOFLIX
+#: field:chapter,emission_date:0
+msgid "Emision Date"
+msgstr "Fecha de Emisión"
+
+#. module: UPOFLIX
+#: field:season,start_date:0
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#. module: UPOFLIX
+#: model:ir.ui.menu,name:UPOFLIX.submenu_osd
+#: view:osd:0
+msgid "Osd"
+msgstr "Bso"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "Films Actor"
+msgstr "Películas como actor"
+
+#. module: UPOFLIX
+#: sql_constraint:gender:0
+msgid "The Name of the Gender must be unique !"
+msgstr "¡ El nombre del género debe ser único !"
+
+#. module: UPOFLIX
+#: field:serie,finalization_date:0
+msgid "Finalization Date"
+msgstr "Fecha de Finalización"
+
+#. module: UPOFLIX
+#: field:serie,state:0
+msgid "Status"
+msgstr "Estado"
+
+#. module: UPOFLIX
+#: view:season:0
+msgid "Remove Chapters"
+msgstr "Eliminar capítulos"
+
+#. module: UPOFLIX
+#: sql_constraint:serie:0
+msgid "The Name of the Serie must be unique !"
+msgstr "¡ El  nombre de la Serie debe ser único !"
+
+#. module: UPOFLIX
+#: sql_constraint:partaker:0
+msgid "The Name of the Partaker must be unique !"
+msgstr "¡ El nombre del Participante debe ser único !"
+
+#. module: UPOFLIX
+#: selection:serie,state:0
+msgid "Delayed"
+msgstr "Retrasada"
+
+#. module: UPOFLIX
+#: field:score,users_score:0
+msgid "User"
+msgstr "Usuario"
+
+#. module: UPOFLIX
+#: constraint:season:0
+msgid "Error: Invalid Season Number"
+msgstr "Error: Número de temporada inválido"
+
+#. module: UPOFLIX
+#: field:score,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "With Birth"
+msgstr "Con Fecha de Nacimiento"
+
+#. module: UPOFLIX
+#: sql_constraint:film:0
+#: sql_constraint:serie:0
+msgid "The OSD must be unique !"
+msgstr "¡ La BSO debe ser única !"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_upoflix_user
+msgid "This is an UPOFLIX user"
+msgstr "Este es un usuario de UPOFLIX"
+
+#. module: UPOFLIX
+#: model:ir.actions.act_window,name:UPOFLIX.act_partaker
+msgid "Partaker"
+msgstr "Participante"
+
+#. module: UPOFLIX
+#: view:film:0
+#: field:film,genders:0
+#: view:gender:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_gender
+#: model:ir.ui.menu,name:UPOFLIX.submenu_gender
+#: view:serie:0
+#: field:serie,genders:0
+msgid "Genders"
+msgstr "Géneros"
+
+#. module: UPOFLIX
+#: field:upoflix.user,surname:0
+msgid "Surname"
+msgstr "Apellido/s"
+
+#. module: UPOFLIX
+#: selection:serie,state:0
+msgid "Finalized"
+msgstr "Finalizada"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_partaker
+msgid "this is a partaker from a resource."
+msgstr "Esto es un participante de un recurso."
+
+#. module: UPOFLIX
+#: field:film,film_fav:0
+#: field:serie,serie_fav:0
+msgid "Users Favorites"
+msgstr "Favoritos de Usuarios"
+
+#. module: UPOFLIX
+#: view:serie:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: UPOFLIX
+#: sql_constraint:score:0
+msgid "The Film Score must be unique !"
+msgstr "¡ La puntuación de una película debe ser única !"
+
+#. module: UPOFLIX
+#: sql_constraint:serie:0
+msgid "The Season reference must be unique !"
+msgstr "¡ La referencia a una temporada debe ser única !"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "Agrupar por..."
+msgstr "Agrupar por..."
+
+#. module: UPOFLIX
+#: sql_constraint:upoflix.user:0
+msgid "The Mail of the User must be unique !"
+msgstr "¡ El correo del usuario debe ser único !"
+
+#. module: UPOFLIX
+#: view:serie:0
+msgid "Delay"
+msgstr "Retrasar"
+
+#. module: UPOFLIX
+#: field:score,score:0
+msgid "Score"
+msgstr "Puntuación"
+
+#. module: UPOFLIX
+#: model:ir.ui.menu,name:UPOFLIX.menu_upoflix
+msgid "UPOFLIX"
+msgstr "UPOFLIX"
+
+#. module: UPOFLIX
+#: field:chapter,description:0
+#: field:gender,description:0
+msgid "Description"
+msgstr "Descripción"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_film
+msgid "This is a film"
+msgstr "Esto es una película"
+
+#. module: UPOFLIX
+#: field:film,votes_amount:0
+msgid "Votes Amount"
+msgstr "Total de Votos"
+
+#. module: UPOFLIX
+#: model:ir.ui.menu,name:UPOFLIX.submenu_season
+#: view:season:0
+#: view:serie:0
+#: field:serie,seasons:0
+msgid "Seasons"
+msgstr "Temporadas"
+
+#. module: UPOFLIX
+#: field:upoflix.user,password:0
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: UPOFLIX
+#: view:partaker:0
+#: field:partaker,series_director:0
+msgid "Series Director"
+msgstr "Series de Director"
+
+#. module: UPOFLIX
+#: field:season,end_date:0
+msgid "End Date"
+msgstr "Fecha Final"
+
+#. module: UPOFLIX
+#: field:film,name:0
+#: field:osd,name:0
+#: field:partaker,name:0
+#: field:resource,name:0
+#: field:serie,name:0
+#: field:upoflix.user,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: UPOFLIX
+#: view:partaker:0
+#: field:partaker,country:0
+msgid "Country"
+msgstr "País"
+
+#. module: UPOFLIX
+#: field:upoflix.user,user_film_favs:0
+msgid "Favorite Films"
+msgstr "Películas favoritas"
+
+#. module: UPOFLIX
+#: model:ir.actions.act_window,name:UPOFLIX.action_upoflix_users
+#: model:ir.ui.menu,name:UPOFLIX.submenu_user
+#: model:ir.ui.menu,name:UPOFLIX.submenu_users
+#: view:upoflix.user:0
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: UPOFLIX
+#: view:partaker:0
+msgid "Series Actor"
+msgstr "Series del Actor"
+
+#. module: UPOFLIX
+#: model:ir.model,name:UPOFLIX.model_osd
+msgid "this is a osd from a resource."
+msgstr "Esta es una bso de un recurso."
+
+#. module: UPOFLIX
+#: view:gender:0
+#: field:gender,series:0
+#: model:ir.actions.act_window,name:UPOFLIX.act_serie
+#: model:ir.ui.menu,name:UPOFLIX.submenu_serie
+#: field:partaker,series_actor:0
+#: view:serie:0
+msgid "Series"
+msgstr "Series"
+
+#. module: UPOFLIX
+#: view:film:0
+msgid "Rated Films Graph"
+msgstr "Rated Films Graph"
+
+#. module: UPOFLIX
+#: sql_constraint:score:0
+msgid "The Serie Score must be unique !"
+msgstr "¡ La puntuación de la serie debe ser única !"
+
+#. module: UPOFLIX
+#: field:film,year:0
 #: field:resource,year:0
 #: field:serie,year:0
 msgid "Year"
 msgstr "Año"
 
 #. module: UPOFLIX
-#: field:season,start_date:0
-msgid "Start Date"
-msgstr "Start Date"
+#: view:serie:0
+#: view:upoflix.user:0
+msgid "Favorites Series"
+msgstr "Series Favoritas"
+
+#. module: UPOFLIX
+#: field:score,film_id:0
+#: field:score,serie_id:0
+msgid "Film"
+msgstr "Film"
 
