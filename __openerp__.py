@@ -35,7 +35,7 @@
               'film_view.xml', 'upoflix_user_view.xml', 'osd_view.xml', 
               'partaker_view.xml', 'workflow/serie_workflow.xml'],
     'css':['static/src/css/upoflix.css'],
-    'demo_xml': [],
+    'demo_xml': ['upoflix_demo.xml'],
     'installable': True,
     'active': False,
 #    'certificate': 'certificate',
