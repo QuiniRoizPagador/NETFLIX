@@ -32,15 +32,15 @@ class season(osv.osv):
     _description = 'this is a season from a serie.'
  
     _columns = {
-            'season_number':fields.integer("Season", required=True),
+            'name':fields.integer("Season", required=True),
             'start_date':fields.date('Start Date'),
             'end_date':fields.date('End Date'),
             'serie_id':fields.many2one('serie', 'Serie', required=True, ondelete="cascade"),
             'chapters':fields.one2many('chapter', 'season_id', 'Chapters'),
         }
-    def _check_season_number(self, cr, uid, ids): 
-        return self.browse(cr, uid, ids)[0].season_number > 0
+    def _check_name(self, cr, uid, ids): 
+        return self.browse(cr, uid, ids)[0].name > 0
     
-    _constraints = [(_check_season_number, 'Error: Invalid Season Number', ['season_number']), ] 
-    _sql_constraints = [ ('chapters_uniques', 'unique(chapters)', 'The chapter reference must be unique!'),
+    _constraints = [(_check_name, 'Error: Invalid Season Number', ['name']), ] 
+    _sql_constraints = [ ('chapters_uniques', 'unique(name, chapters)', 'The chapter reference must be unique!'),
                          ]

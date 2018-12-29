@@ -94,13 +94,17 @@
 		<!-- Seasons -->
 
 		<record id="season1" model="season">
-			<field name="season_number">1</field>
+			<field name="name">1</field>
 			<field name="serie_id" ref="serie1" />
+			<field name="start_date">2018-08-17</field>
+			<field name="end_date">2018-08-25</field>
 		</record>
 
 		<record id="season2" model="season">
-			<field name="season_number">1</field>
+			<field name="name">1</field>
 			<field name="serie_id" ref="serie2" />
+			<field name="start_date">2018-08-17</field>
+			<field name="end_date">2019-01-01</field>
 		</record>
 
 		<!-- Chapters -->

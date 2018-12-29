@@ -12,7 +12,7 @@
 					<sheet>
 						<group>
 							<group colspan="4">
-								<field name="season_number" />
+								<field name="name" />
 							</group>
 							<group colspan="4">
 								<field name="start_date" />
@@ -46,7 +46,7 @@
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="Seasons">
-					<field name="season_number" />
+					<field name="name" />
 					<field name="start_date" />
 					<field name="end_date" />
 					<field name="serie_id" />
@@ -77,10 +77,7 @@
 			<field name="type">gantt</field>
 			<field name="arch" type="xml">
 				<gantt string="Seasons" color="serie_id" date_start="start_date"
-					date_stop="end_date">
-					<level object="serie.serie" link="serie_id" domain="[]">
-						<field name="season_number" />
-					</level>
+					date_stop="end_date" default_group_by="serie_id">
 				</gantt>
 			</field>
 		</record>
