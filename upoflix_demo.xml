@@ -7,7 +7,6 @@
 			<field name="surname">Pepequénico Calisténico</field>
 			<field name="mail">amapeca@gmail.com</field>
 			<field name="password">papeleta1</field>
-			<!--<field name="scores" ref="[(6,0,[score1,])]" />-->
 		</record>
 
 		<record id="user2" model="upoflix.user">
@@ -15,21 +14,27 @@
 			<field name="surname">Del Serranito Ibérico</field>
 			<field name="mail">pepemase@gmail.com</field>
 			<field name="password">jamonypimiento</field>
-			<!--<field name="scores" ref="[(6,0,[score2,])]" />-->
 		</record>
 
 		<!-- Genders -->
 		<record id="gender1" model="gender">
 			<field name="name">Drama Adolescente</field>
-			<field name="description">El cine adolescente (también conocido como teen) es un género cinematográfico destinado a adolescentes y adultos jóvenes, cuyo argumento está frecuentemente basado a los intereses especiales de los más jóvenes, como la mayoría de edad, el primer amor, la rebeldía, conflictos con los padres, angustia adolescente, y la alienación. A menudo, estos temas serios, son presentados de una manera superficial, estereotipada o trivializados.
+			<field name="description">El cine adolescente (también conocido como teen) es
+				un género cinematográfico destinado a adolescentes y adultos
+				jóvenes, cuyo argumento está frecuentemente basado a los intereses
+				especiales de los más jóvenes, como la mayoría de edad, el primer
+				amor, la rebeldía, conflictos con los padres, angustia adolescente,
+				y la alienación. A menudo, estos temas serios, son presentados de
+				una manera superficial, estereotipada o trivializados.
 			</field>
-			<!--<field name="series" ref="[(6,0,[serie1,])]" />-->
 		</record>
 
 		<record id="gender2" model="gender">
 			<field name="name">Fantástico</field>
 			<field name="description">
-				El género fantástico, es un género artístico en el que hay presencia de elementos que rompen con la realidad establecida. 
+				El género fantástico, es un género artístico en el
+				que hay presencia de elementos que rompen con la realidad
+				establecida.
 			</field>
 		</record>
 
@@ -63,7 +68,6 @@
 		<record id="partaker1" model="partaker">
 			<field name="name">Brian Yorkey</field>
 			<field name="country" ref="base.uk" />
-			<!--<field name="series_director" ref="[(6,0,[serie1,])]" />-->
 		</record>
 
 		<record id="partaker2" model="partaker">
@@ -75,10 +79,69 @@
 		<record id="serie1" model="serie">
 			<field name="name">Por Trece Razones</field>
 			<field name="year">2017-03-31</field>
+			<field name="total_score">7</field>
 			<field name="director" ref="partaker1" />
-			<!--<field name="genders" ref="[(6,0,[gender1,])]" />-->
+			<field name="genders" eval="[(6, 0, [gender1, gender2])]" />
+			<field name="actors" eval="[(6, 0, [partaker1, partaker2])]" />
 			<field name="osd" ref="osd1" />
 		</record>
+
+		<record id="serie2" model="serie">
+			<field name="name">(Des)encanto</field>
+			<field name="year">2018-08-17</field>
+			<field name="director" ref="partaker2" />
+			<field name="serie_fav" eval="[(6, 0, [user1])]" />
+			<field name="genders" eval="[(6, 0, [gender1, gender2])]" />
+			<field name="actors" eval="[(6, 0, [partaker1])]" />
+			<field name="osd" ref="osd2" />
+		</record>
+
+		<!-- Seasons -->
+
+		<record id="season1" model="season">
+			<field name="season_number">1</field>
+			<field name="serie_id" ref="serie1" />
+		</record>
+
+		<record id="season2" model="season">
+			<field name="season_number">1</field>
+			<field name="serie_id" ref="serie2" />
+		</record>
+
+		<!-- Chapters -->
+
+		<record id="chapter1" model="chapter">
+			<field name="name">Tape 1</field>
+			<field name="emission_date">2017-03-31</field>
+			<field name="season_id" ref="season1" />
+		</record>
+
+		<record id="chapter2" model="chapter">
+			<field name="name">A Princess, an Elf and a Demon Walk into a Bar
+			</field>
+			<field name="emission_date">2018-08-17</field>
+			<field name="season_id" ref="season2" />
+		</record>
+
+		<!-- Peliculas -->
+		<record id="film1" model="film">
+			<field name="name">El indomable Will Hunting</field>
+			<field name="year">1997-12-01</field>
+			<field name="director" ref="partaker1" />
+			<field name="genders" eval="[(6, 0, [gender1, gender2])]" />
+			<field name="osd" ref="osd3" />
+			<field name="premiere_date">1997-12-01</field>
+		</record>
+
+		<record id="film2" model="film">
+			<field name="name">Harry Potter</field>
+			<field name="year">2007-07-21</field>
+			<field name="director" ref="partaker2" />
+			<field name="genders" eval="[(6, 0, [gender1])]" />
+			<field name="osd" ref="osd4" />
+			<field name="premiere_date">2007-07-21</field>
+		</record>
+
 
 		<!-- Scores -->
 		<record id="score1" model="score">
@@ -93,61 +156,6 @@
 			<field name="serie_id" ref="serie1" />
 		</record>
 
-		<!--
-		<record id="serie1" model="serie">
-			<field name="name">
-				Por Trece Razones
-			</field>
-			<field name="idcard">
-				1
-			</field>
-			<field name="year">
-				2017-03-31
-			</field>
-			<field name="director" ref="director1">
-			</field>
-			<field name="image">
-			</field>
-		</record>
-		<record id="season1" model="season">
-			<field name="season_number">
-				1
-			</field>
-			<field name="idcard">
-				1
-			</field>
-			<field name="start_date">
-				2017-03-31
-			</field>
-			<field name="end_date">
-				2017-03-31
-			</field>
-			<field name="serie_id" ref="serie1"></field>
-		</record>
-		<record id="chapter3" model="chapter">
-			<field name="name">
-				Tape 1
-			</field>
-			<field name="idcard">
-				3
-			</field>
-			<field name="emission_date">
-				2017-03-31
-			</field>
-			<field name="description">
-			Clay Jensen encuentra una caja llena de cintas de cassette de audio de forma anónima abandonada en su puerta delantera. Él la escucha primero en el estéreo portátil de su padre y se da cuenta que es su recientemente fallecida compañera Hannah Baker que está hablando, antes de que se caiga accidentalmente cuando es asustado por su madre. Después él roba el Walkman de su mejor amigo Tony; Clay escucha la primera cinta, en la que Hannah relaciona las experiencias que han activado su suicidio. Ella empieza a compartir la historia de su primer beso, que fue con Justin Foley, quién extendió un rumor falaz que comenzó su espiral descendente. Clay además revela, a través de numerosas escenas retrospectivas cortas, de haber estado enamorado de Hannah y de haber trabajado con ella como asistentes en las salas de cine.  
-			</field>
-			<field name="season_id" ref="season1"></field>
-		
-		</record>
--->
-<!--
-	<record id="user1" model="upoflix.user">
-<field name="name">test</field>
-<field name="surname">test</field>
-<field name="mail">test@test.com</field>
-<field name="password">test</field>
-</record>
--->
+
 	</data>
 </openerp>
