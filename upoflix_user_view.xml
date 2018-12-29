@@ -32,7 +32,7 @@
 								<field name="mail" />
 							</group>
 							<group colspan="4">
-								<field name="password" />
+								<field name="password" password="True"/>
 							</group>
 							<group colspan="4">
 								<field name="registration_date" />
